@@ -1,0 +1,336 @@
+/* App.css */
+
+/* App.css */
+
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  .user-app-container_chat{
+    display: flex;
+    min-height: 100vh;
+  }
+  
+
+  .user_boldness{
+    background-color: #050404;
+    font-weight: bolder;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    
+  }
+  .user-boldness::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+
+  
+/* Sidebar.css */
+.user-Brown {
+    color: #000000;
+    text-decoration: none;
+  }
+.user_menu:hover {
+    background-color: black;
+  }
+ .user-list-chatboard {
+  height: 100%;
+  width: 200px;
+  left: 0;
+  top: 120px;
+  padding-top: 100px;
+  position:absolute; /* Add this line to make it fixed */
+  }
+  .user-list-chatboard  a{
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+  
+  }
+  
+  .user_menu {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+  }
+  
+.user_menu::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.user-left-section_chat {
+    flex: 0 0 210px;/* Adjust the flex property for the left section */
+    position: relative;
+    border: 1px solid #ddd;
+    background: rgb(40, 40, 69);
+    color: white;
+    padding: 20px;
+    overflow-y: auto;  
+}
+  
+  .user-logo {
+    font-family: Goblin One;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-top: 10%;
+  }
+  .user-back_logo{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  }
+  .user-back-icon {
+    margin-right: 18px;
+  }
+  
+  
+  .user-footer_chat {
+    text-align: center;
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  }
+  
+  .user-footer_chat p {
+    margin: 5px 0;
+    color: white;
+    
+  }
+
+
+
+  .user_right_section {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff; /* Add the path to your image */
+    color: white; /* Set text color to white or any other contrasting color */
+  }
+.user-profile_chat{
+    color: black;
+    font-family: Gurajada;
+    font-size: 55px;
+    margin-bottom: 0%;
+    margin-top: 0%;
+    position: relative;
+}
+.user-profile_chat::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+
+
+  .user-profile_qst{
+    color: black;
+    font-family: Gurajada;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 1%;
+    margin-top: 7%;
+    position: relative;
+}
+.askQstTextArea{
+    width: 80%;
+    border-radius: 15px;
+    margin-bottom: 1%;
+}
+.AskQuestionCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.AskQuestionCont::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+.askQstBtn{
+    border-radius: 15px;
+    background: rgb(40, 40, 69);
+    margin-bottom: 3%;
+}
+.askQstBtn:hover {
+    background-color: black;
+  }
+
+
+
+
+
+
+  .QstsContn{
+    
+    display: flex;
+    flex-direction: column;
+}
+.question-container{
+    position: relative;
+}
+.question-container::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .circle-question-container {
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+  }
+  
+  .circle_chatbord {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgb(40, 40, 69);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    margin-right: 10px;
+  }
+  
+  .question-email {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .question_chatbord {
+    margin-bottom: 5px;
+    color:#000000;
+  }
+  
+  .email_chatbord {
+    font-size: 12px;
+    color: #555;
+  }
+  .replyToQuestionCont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+  }
+  .replyToQstTextArea{
+    width: 70%;
+    border-radius: 15px;
+    margin-bottom: 1%;
+  }
+  .replyToQstBtn{
+    border-radius: 15px;
+    background: rgb(40, 40, 69);
+    margin-top: -20px;
+  }
+  .replyToQstBtn:hover {
+    background-color: black;
+  }
+.reply{
+    color: #000000;
+    font-family: Gurajada;
+    font-size: 30px;
+}
+.circle-answer-container {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 5px;
+    margin-left: 50px;
+  }
+  
+  .circle_reply {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(40, 40, 69);
+    color: #fff;
+    font-size: 15px;
+    margin-right: 10px;
+  }
+  
+  .answer-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .email_reply {
+    font-size: 15px;
+    margin-bottom: 5px;
+    color: #00000092;
+  }
+  
+  .answer_reply {
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  
+  .like-dislike {
+    display: flex;
+    margin-bottom: 6%;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 30px;
+    color: #000000;
+  }
+  
+  .icon span {
+    margin-left: 10px;
+  }
+  .like-dislike_QST{
+    display: flex;
+    margin-bottom: 2%;
+    margin-left: 5%;
+  }
+  
+  

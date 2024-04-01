@@ -1,0 +1,223 @@
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*NAV*/
+.navbar2{
+  display: flex;
+  flex-direction: row;
+    background: rgba(255, 255, 255, 0.459);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    padding: 13px 32px;
+    border-bottom: 3px solid black;
+    text-decoration: none;
+}
+.noUnderline {
+    text-decoration: none;
+  }
+nav ul{
+  margin-top: 10px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 50px;
+    
+    
+}
+nav ul li a{
+    color: rgb(12, 12, 12);
+    font-family: 'Gowun Batang';
+    font-size: 16px;
+    margin-top: 5px;
+}
+nav ul li img{
+    margin-top: -13px;
+    margin-right: 10px;
+}
+a.logo2{
+    color: rgb(11, 11, 11);
+    font-family: 'Gurajada;',serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a.logo2 .brown2{
+    color:#BB7C1E;
+}
+
+.welcome2{
+  color: #060606;
+  margin-top: 10px;
+}
+.image-and-text-container2 {
+  display: flex;
+  align-items: center; /* Vertical center alignment */
+}
+
+
+
+
+
+
+
+
+/*display logo styling*/
+.mainbg-job{
+  min-height: 99vh;
+}
+.logocont{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ /*CAROUSEL STYLING*/
+
+.section-center-job{
+width: 100%;
+height: 700px;
+max-height: 100%;
+max-width: 100%;
+position: relative;
+overflow: hidden;
+}  
+article{
+position: absolute;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s linear;
+}
+article.activeSlide{
+opacity: 1;
+transform: translateX(0);
+}
+article.lastSlide{
+transform: translateX(-100%);
+}
+article.nextSlide{
+opacity: 1;
+transform: translateX(100%);
+}
+.career-img-job{
+width: 100%;
+height: 100%;
+}
+
+
+
+
+
+
+
+/*titleAndDetails Styling*/
+.mainbg2_job{
+  min-height: 50vh;
+  background-color: #0a0806;
+ 
+
+}
+.titleAndDetail_job{
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+  
+  background: linear-gradient(to left, #cac6ba63, #bcb08a);
+
+}
+.profname_title_job{
+  color: rgb(14, 11, 11);
+  font-family: 'Gurajada;',serif;
+  font-size: 60px;
+}
+.profname_quote_cont_job{
+  text-align: center;
+  justify-content: center;
+  width: 60%;
+}
+.profname_quote_job{
+  color:white;
+  font-size: 20px;
+  animation: moveUpDown 5s infinite; /* Adjust the duration as needed */
+ 
+}
+
+
+
+
+
+/*TABLE STYLING*/
+.jobtabel{
+  min-height: 120vh;
+  background-color: white;
+ 
+}
+.tablecont2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tblcontainer2{
+  background-color: rgb(218, 216, 216);
+  position: absolute;
+  top: 230%;
+  left: 50%;
+  width: 90%;
+  max-height: 650px;
+  overflow-y: scroll;
+  transform: translate(-50%, -50%);
+}
+table {
+  width: 800px;
+  height: 800px;
+  border-collapse: collapse;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+th{
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+td {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: black;
+}
+th {
+  text-align: left;
+}
+thead th {
+  background-color: #020202;
+}
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+tbody td {
+  position: relative;
+}
+tbody td:hover:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -9999px;
+  bottom: -9999px;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+}
+
+

@@ -1,0 +1,285 @@
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes moveImage {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+/*Navbar styling*/
+.navbar2{
+  display: flex;
+  flex-direction: row;
+    background: rgba(255, 255, 255, 0.459);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    padding: 13px 32px;
+    border-bottom: 2px solid black;
+    text-decoration: none;
+}
+.navbar3{
+    background: rgba(255, 255, 255, 0.459);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid black;
+    height: 100px;
+}
+a.logo3{
+  color: rgb(11, 11, 11);
+  font-family: 'Gurajada;',serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-decoration: none;
+}
+a.logo3 .brown2{
+  color:#BB7C1E;
+}
+.welcome_uni{
+  color: #060606;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+.UserImage_uni{
+  border-radius: 50px;
+  height: 60px;
+  width: 60px;
+}
+.image-and-text-container2 {
+  display: flex;
+  align-items: center; /* Vertical center alignment */
+}
+
+
+
+
+/*section1 styling*/
+.resumesect{
+  min-height: 85vh;
+  background-image: url('../../assets/resume_background.png');
+  border-bottom: 2px solid black;
+}
+
+
+
+
+
+/*section2 styling*/
+.resumesect2{
+  min-height: 120vh;
+  background: linear-gradient(to right, #fff, #937c3146);
+
+}
+.rescont{
+  display: flex;
+  min-height: 100vh;
+}
+.resls{
+  flex: 1;
+}
+.res_bg3{
+  margin-top: 20%;
+  margin-left: 20%;
+  width: 60%;
+  animation: moveImage 5s infinite; /* Adjust the duration as needed */
+}
+.resrs{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.resdet{
+  width: 90%;
+  margin-top: 20%;
+  text-align: center;
+}
+.res_quote1{
+  font-family: 'Gurajada;',serif;
+  color: #bb7c1e91;
+  font-size: 55px;
+}
+.res_p{
+  font-size: 25px;
+  font-family: 'Gowun Batang';
+}
+
+
+
+
+
+/*section3 styling*/
+.resumesect3{
+  min-height: 150vh;
+}
+.resume-section {
+  text-align: center;
+  padding: 60px;
+}
+.section-heading {
+  font-family: 'Gurajada;',serif;
+  color: #7b7060d6;
+  font-size: 40px;
+}
+
+.template-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+
+.template {
+  width: 400px;
+  height: 600px;
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s; /* Add transition for smooth effect */
+}
+.template:hover {
+  transform: translate(9px, 9px); /* Move slightly to the right and down on hover */
+  box-shadow: 20px 5px 20px rgba(0, 0, 0, 0.3); /* Add shadow to the right and bottom */
+}
+.template-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.template-details {
+  padding: 20px;
+}
+
+h3 {
+  margin: 0;
+  color: #333;
+  font-family: 'Gowun Batang';
+}
+
+.tembtn {
+  background-color: #090909;
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  width: 50%;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+  
+  
+ 
+
+
+
+
+ 
+
+  .form_FourthContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    gap: 10px; /* Adjust the gap between images */
+   
+    height: 100vh; /*Set the container height to full viewport height */
+      background-color:  rgba(212, 183, 139, 0.26);
+    
+  }
+
+  .TemplateImg {
+    width: 400px; /* Set a specific width for the images */
+    height: 600px; /* Maintain aspect ratio */
+    position: relative;
+      cursor: pointer;
+  }
+  .TemplateImg2 {
+    width: 400px; /* Set a specific width for the images */
+    height: 600px; /* Maintain aspect ratio */
+    position: relative;
+      cursor: pointer;
+  }
+  .temp-image1 {
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .temp-image1:hover {
+    opacity: 0.8; /* Set the desired opacity when hovering */
+  }
+  .temp-image2 {
+    position: relative;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .temp-image2:hover {
+    opacity: 0.8; /* Set the desired opacity when hovering */
+  }
+.overlay-button{
+    cursor: pointer;
+    background-color: #BB7C1E;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+      border-radius: 5px;
+      transition: opacity 0.3s ease-in-out;
+      transform: translate(-300%, -700%);
+}
+.overlay-button2{
+  cursor: pointer;
+  background-color: #BB7C1E;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+    border-radius: 5px;
+    transition: opacity 0.3s ease-in-out;
+    transform: translate(-300%, -700%);
+}
+.temp-image1:hover .overlay-button {
+    opacity: 1;
+  }
+  .imagtemp-image2e2:hover .overlay-button2 {
+    opacity: 1;
+  }
+
+ 

@@ -1,0 +1,129 @@
+/* Add these styles for icon positioning */
+
+.main_container{
+  min-height: 100vh;
+  background: linear-gradient(to right, #fcdf8931, #562a33);
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+label i {
+    margin-right: 8px;
+  }
+  
+  .login_container {
+    display: flex;
+    height: 80vh;
+    width: 130vh;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.311), 0 0 20px rgba(139, 69, 19, 0.5);
+  
+  }
+  
+  .login_left-section{
+    flex: 1;
+  }
+  
+  
+  .text {
+    margin-bottom: 20px;
+  }
+  
+  .imageGrad {
+    
+  width: 80%;
+  height: 80%;
+      
+  }
+  
+  .login_right-section {
+    background-color: #fff;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  ._login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 50px;
+    background-color: #fff;
+  }
+  ._login-form h1{
+    color: #592b0a;
+  }
+  /* Form styling */
+  .login_form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  button {
+    background-color: #45a049;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #8b4513;
+  }
+  
+  .forgot-password {
+    margin-top: 10px;
+    margin-left: 20%;
+    text-align: center;
+    color: #8B4513;
+    background-color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .forgot-password:hover {
+    background-color: #fff;
+  }
+/* Add these styles for new text and link */
+.signup-text {
+    margin-top: 20px;
+    text-align: center;
+    
+  }
+  
+  .signup-link {
+    color: #8B4513; /* Brown color */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .signup-link:hover {
+    text-decoration: underline;
+  }
+  .loginButton{
+    margin-left: 22%;
+    width: 200px;
+    margin-top: 3%;
+    background-color: #592b0a;
+    text-align: center;
+    justify-self: center;
+  }
+
+    

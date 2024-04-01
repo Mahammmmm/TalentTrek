@@ -1,0 +1,210 @@
+/* App.css */
+
+/* App.css */
+
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .user-app-container{
+    display: flex;
+    height: 100vh;
+  }
+  
+
+  .user_boldness{
+    background-color: #050404;
+    font-weight: bolder;
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+    
+  }
+  .user-boldness::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+
+  
+/* Sidebar.css */
+.user-Brown {
+    color: #000000;
+    text-decoration: none;
+  }
+.user_menu:hover {
+    background-color: black;
+  }
+ .user-list {
+  height: 100%;
+  width: 200px;
+  left: 0;
+  top: 120px;
+  padding-top: 100px;
+  }
+  .user-list a{
+      padding: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
+  
+  }
+  
+  .user_menu {
+    padding: 10px;
+    margin-bottom: 5px;
+    cursor: pointer;
+    position: relative;
+    color: black;
+  }
+  
+.user_menu::after {
+    content: '';
+    display: block;
+    height: 1px;
+    background-color: black;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+.user-left-section {
+  flex: 0; /* Adjust the flex property for the left section */
+  
+    border: 1px solid #ddd;
+    background: rgb(40, 40, 69);
+    width: 250px;
+  height: 100vh;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure footer is at the bottom */
+  }
+  
+  .user-logo {
+    font-family: Goblin One;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    margin-top: 10%;
+  }
+  .user-back_logo{
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  }
+  .user-back-icon {
+    margin-right: 18px;
+  }
+  
+  
+  .user-footer {
+    text-align: center;
+    background: none;
+  }
+  
+  .user-footer p {
+    margin: 5px 0;
+    color: white;
+  }
+  .user_right_section {
+    flex: 2;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff; /* Add the path to your image */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Set text color to white or any other contrasting color */
+  }
+
+.user_blur_container {
+    background: rgba(255, 255, 255, 0);
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    height: auto;
+    width: 80%;
+    height: 70%;
+    margin-left: 10%;
+    margin-top: 30px;
+  }
+  .user-upper-section{
+    background-color: rgb(40, 40, 69);
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+  }
+  .pass-space{
+    margin-left: 650px;
+    margin-top: 12px;
+    color: white;
+  }
+  .user_lower_section{
+    background-color: rgba(167, 167, 167, 0.217);
+    height: 89%;
+  }
+  .user-divider {
+    border-left: 1px solid #0a0a0a; /* Adjust the color and style of the line */
+    height: 250px; /* Set the height to match the user image */
+    margin: 0 50px; /* Adjust the margin for spacing */
+  }
+.user-profile{
+    color: black;
+    font-family: Gurajada;
+    font-size: 500%;
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+.user-us{
+    font-family: Gurajada;
+    font-size: 200%;
+    color: black;
+}
+.user-user-profile {
+    display: flex;
+    align-items: center;
+    margin-left: 5%;
+  }
+  
+  .user-user-image {
+    margin-left: 50px;
+  }
+  
+  
+  .user-user-image img {
+    width: 150px;
+    margin-left: 50px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .user-user-details {
+    max-width: 400px;
+    margin-right: 80px;
+  }
+  
+  .user-user-details h2 {
+    margin-bottom: 10px;
+  }
+.user-details{
+    color: black;
+}
+
+
+
+  
+ 
+    

@@ -1,0 +1,190 @@
+/* Questionnaire.css  background-color: rgba(212, 183, 139, 0.459);
+  */
+
+
+.Qst-ThirdContainer {
+ background: linear-gradient(to bottom, #3c7074, #fff);
+
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 110vh;
+  height: 20vh;
+  }
+  
+  .Qst-Text2,
+  .Qst-Text3 {
+    text-align: center; /* Center the text within the container */
+    margin: 0; /* Remove default margin */
+  }
+  
+  .Qst-Text2 {
+    font-weight: bolder;
+    font-size:xx-large;
+  }
+
+  .Qst-Text3 {
+    color: rgba(0, 0, 0, 0.60);
+  }
+
+  .Qst-FourthContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  margin-bottom: 50px;
+  margin-top: 100px;
+    flex-shrink: 0;
+  }
+
+  .Qst-qstart{
+    margin-left: 60;
+  }
+
+  .Qst-QuestionContainer{
+    flex-direction: column; /* Stack children vertically */
+   
+    
+  }
+  .Qst-Text4{
+    color: rgba(0, 0, 0, 0.52);
+    font-family: Halant;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    
+  }
+  .Qst-question{
+    color: #000;
+    font-family: Halant;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 50px;
+    margin-top: 10px;
+  }
+  
+ 
+  .Qst_Buttonn{
+    margin-top: 10px; /* Adjust margin as needed */
+    margin-bottom: 30px;
+    margin-left: 30%;
+    color: white;
+    font-weight:bold ;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 15px;
+    background: #173133;
+    width: 40%;
+  }
+  .Qst_Buttonn:hover {
+    background-color:#3c7074b7 ; /* Change color on hover if desired */
+  }
+  .Qst-OptionContainer{
+    margin-left: 50px;
+    width:250px;
+    height: 35px;
+    border-radius: 10px;
+    background: #3c7074b7;
+    margin-top: 2%;
+  }
+
+.Qst-icons img {
+    width: 30px; /* Adjust the size of social icons as needed */
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 15%;
+  }
+
+.Qst-option{
+  font-size:medium;
+   margin-left: 5px; /* Adjust margin as needed */
+  margin-top: 5px;
+}
+.Qst-input[type="radio"] {
+  width: 13px; /* Adjust width as needed */
+  height: 20px;
+  background-color: #e0e0e0; /* Replace with your desired background color */
+  border: 1px solid #ccc; /* Add border for better visibility */
+}
+.Qst-form{
+  width: 110vh;
+  background: white;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    
+}
+
+
+
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes moveImage {
+  0% {
+    transform: translateX(50px);
+  }
+  50% {
+    transform: translateX(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateX(50px);
+  }
+}
+
+
+
+.Qst_Sec1{
+  min-height: 30vh;
+  display: flex;
+ }
+ .Qst_Sec1_Left{
+  text-align: center;
+  flex: 1;
+ }
+ .Qst_Sec1_Right{
+  flex: 1;
+ }
+ .Qst_quote{
+  margin-top: 30%;
+  font-weight: bold;
+  font-size: 45px;
+  color: #3c7074;
+ }
+ .Qst_quote2{
+  margin-top: 15%;
+  font-size: 20px;
+  color: #263d5574;
+ }
+ .Qst_quote::after {
+  content: "";
+  display: block;
+  width: 40%; /* Adjust width as needed */
+  border-bottom: 4px solid #b47925; /* Adjust thickness and color as needed */
+  margin-top: 20px; /* Adjust spacing as needed */
+  margin-left: 30%;
+  animation: moveImage 2.5s infinite;
+}
+/*.Qst_quote2::after {
+  content: "";
+  display: block;
+  width:80%; 
+  border-bottom: 1px solid black;
+  margin-top: 5px; 
+  margin-left: 10%;
+} */
+ .Qst_IMG{
+  margin-top: 50px;
+  width: 100%;
+  height: 90%;
+ }
+  

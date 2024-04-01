@@ -1,0 +1,94 @@
+.smain_container{
+  min-height: 150vh;
+  background: linear-gradient(to right, #fcdf8931, #562a33);
+
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+label {
+  margin-bottom: 8px;
+}
+
+.signup-container {
+  display: flex;
+  height: 132vh;
+  width: 140vh;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 10px 10px 20px 20px rgba(0, 0, 0, 0.311), 0 0 20px rgba(139, 69, 19, 0.5);
+}
+
+.image-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+.imageGrad {
+  width: 100%;
+  height: 146vh;
+}
+
+.sright-section {
+  background-color: #fff;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Signup-form-section {
+    max-width: 400px;
+    width: 100%;
+    padding: 50px;
+    background-color: #fff;
+}
+.Signup-form-section h1{
+  color: #592b0a;
+}
+/* ... rest of your styles */
+
+input{
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.signup-textarea
+{
+  margin-left: 25px;
+  width: 80%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.city_Signup{
+  width: 100%;
+  margin-left: 0;
+}
+.Sign_button {
+  margin-left: 20%;
+  height: 40px;
+    width: 200px;
+    margin-top: 3%;
+    background-color: #8b4513;
+    text-align: center;
+    justify-self: center;
+}
+
+.Sign_button:hover {
+  background-color: #592b0a;
+}
+
+/* Optional: Add styles for form responsiveness */
+@media (max-width: 600px) {
+  .signup-form {
+    max-width: 100%;
+  }
+}

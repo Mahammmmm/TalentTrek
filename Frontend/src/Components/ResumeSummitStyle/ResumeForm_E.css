@@ -1,0 +1,126 @@
+/* YourComponent.css */
+
+.two-section-container {
+    display: flex;
+    min-height: 100vh;
+  }
+  .left-section {
+    width: 30%;
+    background-color: #f0f0f0;
+    padding: 20px;
+    flex: 1;
+    background: linear-gradient(to left, #fff, #937c318a);
+  
+  }
+  .left-header h1 {
+    color: #333;
+    font-family: 'Gurajada;',serif;
+  }
+  .status-bar {
+    display: flex;
+    flex-direction: row; /* Set flex-direction to column */
+    align-items: center;
+    margin-top: 120px;
+  }
+  .status-bar ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Set flex-direction to column */
+    align-items: center; /* Align items in the center */
+  }
+  
+  .status-bar li {
+    background-color: #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px; /* Add margin to create space between circles */
+    font-weight: bold;
+  }
+  
+  .status-bar li.active {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  .status-text {
+    margin-top: -10px;
+  }
+  .status-text p{
+    margin-bottom: 21px;
+    margin-left: 10px;
+  }
+  .resufooter {
+    margin-top: 130px;
+    text-align: center;
+  }
+  .resufooter p{
+  font-weight:bolder;
+  }
+  
+  
+  
+  
+  
+  
+  
+  .right-section {
+    width: 70%;
+    padding: 20px;
+    flex: 3;
+  }
+  
+  .right-header h2 {
+    color: #333;
+    font-family: 'Gowun Batang';
+    font-size: 50px;
+  }
+  
+  .right-header p {
+    color: #888;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  .personal-details-form_WE {
+    padding: 20px;
+    width: 100%;
+  }
+
+  .chckbox{
+    display: flex;
+    flex-direction: row;
+    height: 15px;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+  .MY1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .button_E {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .button_E button {
+    margin-top: 13%;
+    padding: 10px 20px;
+    background-color: #b8a97c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button_E button:hover {
+    background-color: #b38c0058;
+  }
+  

@@ -1,0 +1,585 @@
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50px); /* Adjust the distance the image should move */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/*HEADER SECTION*/
+.header1{
+    min-height: 100vh;
+    background:black;
+    background-position: center;
+}
+
+.header1 .wrapper{
+    position: relative;
+    height: 100vh;
+    display: flex;
+}
+.header_left-section {
+  flex: 1; /* Set a larger width for the left section */
+ background-color: rgba(8, 7, 6, 0.566); 
+}
+
+.header_right-section {
+  flex: 2; /* Set a smaller width for the right section */
+  /*background-color: #BB7C1E; /* Set your desired background color */
+  background-color: white
+
+}
+.headerText{
+position: absolute;
+top:18%;
+bottom: 5%;
+left: 8%;
+width: 500px;
+padding: 50px 40px;
+position: relative;
+            display: inline-block;
+            transition: transform 0.3s ease-in-out;
+}
+
+.headerText:hover {
+    transform: translateY(-5px);
+}
+.slogan{
+    color: #FFF;
+    margin-top: -60px;
+    text-align:left;
+    font-family: Holtwood One SC;
+    font-size: 40px;
+    font-style: normal;
+    line-height: normal;
+}
+.headerParagraph{
+    color: #FFF;
+    text-align: center;
+    font-family: 'Gowun Batang', serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+}
+header .headerText .LoginButton{
+    border-radius: 10px;
+    background-color: #BB7C1E;
+    padding: 10px 32px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    margin-left:35%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+header .header_bg2_diff{
+  height: 70%;
+    width: 90%;
+    margin-top: 30%;
+    margin-left: 55%;
+    border-radius: 200px 200px 0px 0px;
+    border-width: 4px 4px 4px 4px;
+border-style: solid;
+border-color:darkgray;
+}
+.image-container2_diff {
+  perspective: 100px;
+  width: 30%;
+  height: 100%;
+     
+}
+
+.image2_diff {
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 1.0s;
+}
+/*
+.image2_diff:hover {
+            transform: rotateY(200deg);
+}
+*/
+.face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+}
+
+.front2 {
+            transform: rotateY(0deg);
+}
+
+.back2 {
+            transform: rotateY(160deg);
+}
+
+
+
+
+
+
+/*NAV SECTION*/
+nav{
+  display: flex;
+  flex-direction: column;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(0px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 300;
+    padding: 13px 32px;
+    border-bottom: 3px solid black;
+    text-decoration: none;
+}
+.noUnderline {
+    text-decoration: none;
+  }
+nav ul{
+  margin-top: 10px;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    gap: 50px;
+    
+    
+}
+nav ul li a{
+    color: rgb(12, 12, 12);
+    font-family: 'Gowun Batang';
+    font-size: 16px;
+    margin-top: 5px;
+}
+nav ul li img{
+    margin-top: -13px;
+    margin-right: 10px;
+}
+a.logo{
+    color: rgb(11, 11, 11);
+    font-family: 'Gurajada;',serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a.logo .brown{
+    color:#BB7C1E;
+}
+
+
+
+
+
+
+
+
+.careersbg{
+    
+    min-height: 100vh;
+}
+
+
+
+
+
+
+/*CAREERS SECTION*/
+  .career_container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Set the container height to 100% of the viewport height */
+  }
+  
+  .career_middle-section {
+    flex: 4;
+    /*background-color: #937c31; /* Light background color for the upper section */
+    background: linear-gradient(to right, #cac6ba63, #937c31);
+
+    padding: 20px;
+  }
+  .comma_bg{
+    width: 5%;
+    height: 15%;
+    margin-top: 5%;
+  }
+  .career_lower-section {
+    flex: 1;
+    background-color: #fffefbef; /* Slightly darker background color for the lower section */
+    
+  }
+  .career_upper-section {
+    flex: 1;
+    background-color: #fffefbef; /* Slightly darker background color for the lower section */
+    
+  }
+ .career_quote{
+  font-family: Holtwood One SC;
+ }
+  /*CAROUSEL STYLING*/
+  h4{
+    letter-spacing: 0.1rem;
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-weight:bolder;
+  }
+
+.section-center{
+  margin-left: 45%;
+  margin-top: -22%;
+  width: 100%;
+  height: 320px;
+  max-width: 600px;
+  text-align: center;
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}  
+article{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s linear;
+}
+article.activeSlide{
+  opacity: 1;
+  transform: translateX(0);
+}
+article.lastSlide{
+  transform: translateX(-100%);
+}
+article.nextSlide{
+  opacity: 1;
+  transform: translateX(100%);
+}
+.career-img{
+  margin-bottom: 1rem;
+  width: 45%;
+  height: 55%;
+}
+.prev,
+.next{
+position:absolute;
+top: 300px;
+background-color: black;
+transform: translateY(-50%);
+color: white;
+width: 3.25rem;
+height: 1.25rem;
+display: grid;
+place-items: center;
+border-color: transparent;
+font-size: 1rem;
+border-radius: 0.25rem;
+cursor: pointer;
+transition: all 0.3s linear;
+}
+.prev:hover,
+.next:hover{
+  background: rgb(199, 182, 98);
+}
+.prev{
+  left: 0;
+}
+.next{
+  right: 0;
+}
+
+
+
+
+
+
+
+/*UNIVERSITY SECTION*/
+.uni_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the container height to 100% of the viewport height */
+}
+
+.uni_middle-section {
+  flex: 4;
+  background: linear-gradient(to right, #ea5e2683, #cac6ba63);
+
+  /*background-color: #ea5e267d;  Light background color for the upper section */
+  padding: 20px;
+}
+.uni_lower-section {
+  flex: 1;
+  background-color: #fffefbef; /* Slightly darker background color for the lower section */
+  
+}
+.uni_upper-section {
+  flex: 1;
+  background-color: #fffefbef; /* Slightly darker background color for the lower section */
+  
+}
+.uni_quote{
+font-family: Holtwood One SC;
+margin-left: 57%;
+margin-top: -40%;
+animation: moveUpDown 5s infinite; /* Adjust the duration as needed */
+ 
+}
+/*CAROUSEL STYLING*/
+h4{
+  letter-spacing: 0.1rem;
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-weight:bolder;
+}
+.section-center2{
+margin-left: 5%;
+margin-top: 5%;
+width: 100%;
+height: 320px;
+max-width: 600px;
+text-align: center;
+position: relative;
+display: flex;
+overflow: hidden;
+}  
+article{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s linear;
+}
+article.activeSlide{
+opacity: 1;
+transform: translateX(0);
+}
+article.lastSlide{
+transform: translateX(-100%);
+}
+article.nextSlide{
+opacity: 1;
+transform: translateX(100%);
+}
+.uni-img{
+margin-bottom: 1rem;
+width: 65%;
+height: 65%;
+}
+.prev2,
+.next2{
+position:absolute;
+top: 300px;
+background-color: rgb(245, 73, 73);
+transform: translateY(-50%);
+color: white;
+width: 3.25rem;
+height: 1.25rem;
+display: grid;
+place-items: center;
+border-color: transparent;
+font-size: 1rem;
+border-radius: 0.25rem;
+cursor: pointer;
+transition: all 0.3s linear;
+}
+.prev2:hover,
+.next2:hover{
+background: rgb(199, 120, 98);
+}
+.prev2{
+left: 0;
+}
+.next2{
+right: 0;
+}
+
+
+
+
+
+
+
+/*RESUME STYLING*/
+.resume_container{
+  display: flex;
+  min-height: 150vh;
+}
+.resume_left_section{
+  flex: 1;
+  background-color: #ffffff;
+  border-right: 5px solid black;
+}
+.resume_right_section{
+  flex: 1;
+  background-color: white;
+}
+.resume_bg{
+  width: 100%;
+  height: 80%;
+  margin-top: 20%;
+}
+.resume_quote{
+  font-family: Goblin One;
+  margin-top: 35%;
+  margin-left: 5%;
+  color: #9b5712;
+  animation: moveUpDown 5s infinite; /* Adjust the duration as needed */
+  
+}
+.resume_quote2{
+  margin-left: 07%;
+  color: black;
+}
+.resume_btns{
+  width: 30%;
+  margin-left: 35%;
+  border-radius: 15px;
+  background-color: black;
+}
+
+
+
+
+
+
+/*FEEDBACK STYLING*/
+.feedback_container{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.feedback_up_section{
+  flex:1;
+  background-color:white;
+}
+.feedback_down_section{
+  flex:6;
+  background: linear-gradient(to bottom, #fffffff3  , #3d3939b4);
+text-align: center;
+}
+.fedback_bg{
+  width: 35%;
+  margin-top: 20%;
+}
+.feedback_quote{
+  font-family:Grandstander;
+  font-size: 50px;
+  margin-top: 5%;
+}
+/*Carousel Styling*/
+.uemails{
+font-size: 15px;
+font-weight: bolder;
+}
+.section-center3{
+margin-left: 35%;
+margin-top: 2%;
+height: 370px;
+max-width: 350px;
+text-align: center;
+position: relative;
+display: flex;
+overflow: hidden;
+background-color: #ffffffe7;
+}  
+article{
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0;
+transition: all 0.3s linear;
+}
+article.activeSlide{
+opacity: 1;
+transform: translateX(0);
+}
+article.lastSlide{
+transform: translateX(-100%);
+}
+article.nextSlide{
+opacity: 1;
+transform: translateX(100%);
+}
+.fb-img{
+  border-radius: 50%;
+margin-bottom: 1rem;
+width: 20%;
+height: 30%;
+margin-top: 15%;
+}
+
+
+
+
+
+
+/*Profile styling*/
+.profile_container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Set the container height to 100% of the viewport height */
+}
+
+.profile_middle-section {
+  position: relative;
+  flex: 2;
+  /*background-color: #937c31; /* Light background color for the upper section */
+  background: linear-gradient(to right, #fcdf8931, #562a33);
+
+  padding: 20px;
+}
+.profile_lower-section {
+  flex: 1;
+  background-color: #fffefbef; /* Slightly darker background color for the lower section */
+  
+}
+.profile_upper-section {
+  flex: 1;
+  background-color: #fffefbef; /* Slightly darker background color for the lower section */
+  
+}
+.quote1{
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  margin-top: -5%;
+  top: 0;
+  left: 0;
+}
+.quote2{
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.profile_quote1{
+  font-family: Gowun Batang;
+  font-size: 30px;
+  }
+  .profile_quote2{
+    font-family: Gowun Batang;
+    font-size: 30px;
+    }
+    .Appname{
+      color: #562a33;
+font-size: 80px;
+text-align: center;
+font-family: Gurajada;
+margin-top: 10%;
+    }
+
+

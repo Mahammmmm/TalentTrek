@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <script>
+        var status = '<%- JSON.stringify(status) %>';
+        if(JSON.parse(status) == "verified"){
+            if(confirm("Do You Want to Login?")){
+                window.location.href = "http://localhost:3601/login";
+            }
+        }
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            // Password should be at least 8 characters and contain at least one alphabet, one number, and one special character
+            var passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/;
+
+            if (!passwordRegex.test(password)) {
+                alert("Password should be at least 8 characters and contain alphabet, number, and atleast one special character");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password should be the same");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body style="background-color:rgba(187, 157, 112, 0.909);">
+    <div style="background-color: black;">
+        <h1 style="color: white; text-align: center;font-size:45px;">Talent <span style="color: #BB7C1E;">Trek</span> </h1>
+    </div>
+    <br><br><br>
+   <h2 style="text-align: center;">RESET PASSWORD</h2>
+   <br>  <br> <br> 
+   <div style=" 
+   position: absolute;
+   top: 60%;
+   left: 50%;
+   transform: translate(-50%, -50%);max-width: 400px;
+   width: 100%;
+   padding: 30px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 0 20px rgba(139, 69, 19, 0.5);
+   background-color: #fff;">
+        <h2><%= email%></h2>
+        <form action="" method="post" onsubmit="return validatePassword()">
+            <label for="password">Enter New Password:    </label>
+            <input type="password" name="password" id="password" placeholder="Enter Password"><br><br>
+            <label for="confirm-password">Confirm New Password:    </label>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password"><br><br>
+            <input type="submit" value="SUBMIT" style="background-color: black;color: #ccc;width: 100px;height: 30px;">
+        </form>
+   </div>
+    
+</body>
+</html>

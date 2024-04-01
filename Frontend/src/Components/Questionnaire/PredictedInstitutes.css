@@ -1,0 +1,112 @@
+.Inst_Sec1 {
+    min-height: 20vh;
+}
+
+.InstImgContainer {
+    display: flex;
+    position: relative;
+}
+
+.InstTextOverlay1 {
+    flex: 1;
+    text-align: center;
+    margin-top: 15%;
+    margin-left: 40px;
+}
+.InstTextOverlay2 {
+    flex: 1;
+}
+.two-color-text1_INST {
+    color: #dcb88f;
+    font-family: Holtwood One SC;
+    font-size: 30px;
+    font-weight: bold;
+}
+.two-color-text2_INST {
+   color: black;
+    font-size: 17px;
+    margin-top: 10%;
+}
+
+.InstIMG {
+    height: 560px;
+    width: 120%;
+    margin-top: 7%;
+}
+
+
+
+
+
+
+
+
+
+
+
+.inst_jobtabel{
+    min-height: 110vh;
+    margin-top: 10%;
+  }
+  .inst_head{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 3%;
+}
+  .inst_tblcontainer2{
+    background-color: #dcb88f60;
+    left: 50%;
+    top: 180%;
+    width: 95%;
+    position: absolute;
+    max-height: 600px;
+    overflow-y: scroll;
+    transform: translate(-50%, -50%);
+  }
+  table {
+    width: 800px;
+    height: 800px;
+    border-collapse: collapse;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+    
+  th{
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #faf6f6;
+  }
+  .tabledata {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #020202;
+  }
+  .tabledata2 {
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #335933;
+  }
+  th {
+    text-align: left;
+    background-color: #020202;
+  }
+  
+  tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  tbody td {
+    position: relative;
+  }
+  tbody td:hover:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -9999px;
+    bottom: -9999px;
+    background-color: rgba(255, 255, 255, 0.2);
+    z-index: -1;
+  }
+  
+  

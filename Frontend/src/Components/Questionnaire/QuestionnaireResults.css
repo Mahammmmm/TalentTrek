@@ -1,0 +1,120 @@
+ 
+.QsrRst-Text2{
+    color: black;
+    font-family: Jua;
+    font-size: 40px;
+    font-weight: bold;
+}
+.QsrRst-Text3{
+    color: rgba(0, 0, 0, 0.59);
+    font-family: Habibi;
+    font-size: 25px;
+    margin-left: 5%;
+}
+.QsrRst_ThirdContainer{
+    min-height: 9vh;
+    margin-top: 05%;
+    margin-bottom: 05%;
+    /*background-color: #8ecee365;*/
+    text-align: center;
+}
+.QsrRst_Sec1{
+    min-height: 20vh;
+    position: relative;
+}
+.QsrRstIMG{
+    height: 560px;
+    width: 100%;
+}
+.QsrRstImgContainer {
+    position: relative;
+}
+.QsrRstTextOverlay {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    text-align: center;
+}
+.two-color-text {
+    background: linear-gradient(90deg, #e447af, #4e7ccb);
+    -webkit-background-clip: text; /* For Safari */
+  -webkit-text-fill-color: transparent; /* For Safari */
+  background-clip: text; /* Standard property */
+  color: transparent; /* Hide text to prevent duplication */
+    font-family: 'Gowun Batang', serif;
+    font-size: 35px;
+    font-weight: bold;
+  }
+  .QsrRst_FourthContainer {
+    min-height: 100vh;
+    display: flex;
+  }
+  .QsrRst__head1{
+    font-size: 30px;
+    font-family: 'Gurajada;',serif;
+    color:#aa257e ;
+  }
+  .QsrRst__head2{
+    font-size: 30px;
+    font-family: 'Gurajada;',serif;
+    color:#355c9ff9 ;
+  }
+  .QsrRst_leftSection,
+  .QsrRst_rightSection {
+    width: 60%;
+    text-align: center; 
+  }
+  
+  .QsrRst_topSection{
+    margin-bottom: 5%;
+  }
+  .QsrRst_bottomSection {
+    margin-left: 29%;
+  }
+  
+  .QsrRst_bottomContent1 {
+    width: 280px; 
+    height: 550px; 
+    background-color: #e447b02b; 
+    border-radius: 20px;
+}
+.QsrRst_bottomContent2 {
+    width: 280px; 
+    height: 550px; 
+    background-color: #4e7ccb36; 
+    border-radius: 20px;
+}
+.personality_name{
+    font-family: 'Gurajada;',serif;
+    font-size: 24px;
+    margin: 0;
+    margin-bottom: 25px;
+}
+.personality_image {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 25px;
+
+}
+.personality_description{
+    font-family: 'Gurajada;',serif;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: rgba(0, 0, 0, 0.719);
+}
+.personality_button1{
+    margin-top: 20px;
+    background-color: #aa257e;
+}
+.personality_button1:hover {
+    background-color:  #aa257e69; /* Change color on hover if desired */
+  }
+.personality_button2{
+    margin-top: 25px;
+    background-color:cadetblue;
+}
+.personality_button2:hover {
+    background-color:  rgba(95, 158, 160, 0.543); /* Change color on hover if desired */
+  }

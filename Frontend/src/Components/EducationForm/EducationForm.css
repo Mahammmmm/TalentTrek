@@ -1,0 +1,184 @@
+
+
+  
+  
+ .navEF{
+  display: flex;
+  flex-direction: row;
+ }
+ .EduForm_Sec1{
+  min-height: 30vh;
+  background-color: #d4b78b5e;
+  display: flex;
+  border-bottom: 3px solid black;
+ }
+ .EduForm_Sec1_Left{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+ }
+ .EduForm_Sec1_Right{
+  flex: 1;
+ }
+ .EFquote{
+  font-family: 'Gowun Batang', serif;
+  font-weight: bolder;
+  font-size: 50px;
+ }
+ .EFIMG{
+  margin-left: 80px;
+ }
+  
+ 
+  .Edu-ThirdContainer {
+    margin-top: 70px;
+    margin-bottom: 30px;
+    margin-left: 10%;
+    height: 15vh;
+    width: 80%;
+  }
+  
+  .Edu-Text2 {
+    text-align: center; /* Center the text within the container */
+    margin: 0; /* Remove default margin */
+    font-size:45px;
+    color: rgba(0, 0, 0, 0.49);
+  font-family: Gurajada;
+  }
+
+  
+  .Edu-footer {
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .Edu-footer div {
+    margin-bottom: 10px; /* Adjust the margin as needed */
+  }
+  .Edu-footer a {
+    margin: 0 10px;
+  }
+  .Edu-icons img {
+    width: 30px; /* Adjust the size of social icons as needed */
+    height: 30px;
+    margin: 0 5px;
+    border-radius: 15%;
+  }
+
+  /*matric*/
+  .checkbov-div{
+
+    margin-left: -140px;
+  }
+  select{
+    padding: 10px;
+    margin: 10px;
+    width:90%;
+  }
+  .Select{
+    padding: 10px;
+    margin: 10px;
+    width:96%;
+    margin-left: 0px;
+  }
+  .matric-input{
+    padding: 10px;
+    margin: 10px;
+    width: 90%;
+  }
+.subjects{
+    margin: 0px;
+    padding: 0px;
+  }
+  .Edu-blur-container1 {
+    background: white;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    height: auto;
+    width: 70%;
+    height: 70%;
+    margin-left: 15%;
+    margin-bottom: 50px;
+    
+  }
+  .Edu-upper-section1{
+    background-color: rgba(212, 183, 139, 0.62);
+    text-align: center;
+  }
+.Edu-us1{
+    font-family: Gurajada;
+    font-size: 200%;
+}
+.Edu-lower-section1{
+    display: flex;
+}
+.form-container1 {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .image-container1 {
+    flex: 1;
+  }
+
+  .matric {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 299px 0px 0px 299px;
+  }
+
+/*Intermediate*/
+
+.Edu-blur-container2 {
+    background: white;
+    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+    width: 70%;
+    height: 70%;
+    margin-left: 15%;
+    margin-bottom: 50px;
+  }
+  .Edu-upper-section2{
+    background-color: rgba(212, 183, 139, 0.62);
+    text-align: center;
+  }
+.Edu-us2{
+    font-family: Gurajada;
+    font-size: 200%;
+}
+.Edu-lower-section2{
+    display: flex;
+}
+.matric2 {
+  max-width: 100%;
+  height: 100%;
+  border-radius: 0px 299px 299px 0px;
+}
+
+  .form-container2 {
+    flex: 1;
+    padding: 20px;
+  }
+
+  .image-container222 {
+    flex: 1;
+  }
+
+  .eduForm-Button{
+    background: #D4B78B;
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    width: 15%;
+    margin-top: 10px;
+    margin-bottom: 50px;
+    margin-left: 500px;
+    border-radius: 50px;
+  }
+
+
