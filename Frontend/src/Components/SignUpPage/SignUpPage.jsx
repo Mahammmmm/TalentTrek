@@ -122,21 +122,20 @@ class SignupForm extends Component {
         "D.G. Khan", "Layyah", "Rahim Yar Khan", "Jhang", "Chiniot", "Lodhran", "Pakpattan", "Sheikhupura",
         "Taxila", "Toba Tek Singh", "Vehari", "Attock", "Bhakkar", "Khushab", "Narowal", "Hafizabad",
         "Mianwali", "Mandi Baha-ud-din", "Jhelum", "Rajanpur", "Gujranwala", "Gujrat", "Kasur", "Khanewal",
-        "Muzaffargarh", "Nankana Sahib", "Sargodha", "Kasur", "Khanewal", "Kharian", "Khushab", "Pakpattan",
-        "Sargodha", "Vehari", "Narowal", "Hafizabad", "Nankana Sahib", "Rajanpur", "Sheikhupura", "Sargodha"
+        "Muzaffargarh", "Nankana Sahib", "Sargodha","Kharian"
       ],
       "Sindh": [
         "Karachi", "Hyderabad", "Nawab Shah", "Sukkur", "Larkana", "Mir Pur (AJK)", "Kotri", "Jamshoro",
         "Shahdadpur", "Badin", "Thatta", "Tando Allah Yar", "Shikarpur", "Jacobabad", "Matiari", "Mirpur Khas",
         "Tando Adam", "Kashmore", "Dadu", "Ghotki", "Sanghar", "Umerkot", "Naushehro Feroze", "Khairpur",
-        "Sujawal", "Tando Muhammad Khan", "Naushahro Feroze", "Larkana", "Sanghar", "Badin", "Mithi", "Tharparkar",
-        "Tando Allahyar", "Mirpur Mathelo", "Matiari", "Jacobabad", "Shikarpur", "Sukkur"
+        "Sujawal", "Tando Muhammad Khan", "Naushahro Feroze", "Mithi", "Tharparkar",
+        "Tando Allahyar", "Mirpur Mathelo"
       ],
       "Khyber Pakhtunkhwa (KPK)": [
         "Abbottabad", "Mansehra", "Swabi", "Kohat", "Mardan", "Mingora", "Chitral", "Haripur", "Risalpur",
         "Dera Ismail Khan", "Nowshera", "Batkhela", "Bannu", "Hangu", "Dargai", "Daggar", "Parachinar", "Chakdara",
-        "Tank", "Jamrud", "Timergara", "Karak", "Swat", "Lakki Marwat", "Kohat", "Timergara", "Karak", "Swat",
-        "Lakki Marwat", "Upper Dir", "Lower Dir", "Bajaur", "Buner", "Mohmand", "Shangla", "Swabi", "Swat"
+        "Tank", "Jamrud", "Timergara","Swat", "Karak",
+        "Lakki Marwat", "Upper Dir", "Lower Dir", "Bajaur", "Buner", "Mohmand", "Shangla"
       ],
       "Balochistan": [
         "Quetta", "Gwadar", "Khuzdar", "Loralai", "Chaman", "Zhob", "Sibi", "Turbat", "Kalat", "Kharan",
