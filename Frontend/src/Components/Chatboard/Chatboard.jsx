@@ -12,7 +12,7 @@ const App = () => {
   const [userData, setUserData] = useState("");
   const [questions, setQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState("");
-  const [newAnswer, setNewAnswer] = useState("");
+  const [newAnswer, setNewAnswer] = useState([]);
   const [likedQuestions, setLikedQuestions] = useState([]);
 
   useEffect(() => {
@@ -92,7 +92,7 @@ const App = () => {
       body: JSON.stringify({
         token: window.localStorage.getItem("token"),
         questionId,
-        reply: newAnswer,
+        reply: newAnswer[questionId],
       }),
     })
       .then((res) => res.json())
@@ -100,7 +100,7 @@ const App = () => {
         // Refresh the list of questions after posting
         fetchQuestions();
         // Clear the newAnswer input
-        setNewAnswer("");
+        setNewAnswer({ ...newAnswer, [questionId]: '' });
       })
       .catch((error) => console.error("Error posting answer:", error));
   };
@@ -333,8 +333,8 @@ const App = () => {
                 <input
                     placeholder="Reply to question..."
                     className="replyToQstTextArea"
-                    value={newAnswer}
-                    onChange={(e) => setNewAnswer(e.target.value)}
+                    value={newAnswer[question._id] || ''}
+                    onChange={(e) => setNewAnswer({ ...newAnswer, [question._id]: e.target.value })}
                 />
                 <button
                     className="replyToQstBtn"

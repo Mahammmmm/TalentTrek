@@ -121,7 +121,7 @@ const Questionnaire = () => {
 
 
             <section id='jobtable' className='inst_jobtabel'>
-                <h1 className='inst_head'>Recommended Institutes for <span style={{color:"#dcb88f"}}>{personality}</span></h1>
+                <h1 className='inst_head'>Recommended Institutes for <span style={{color:"#dcb88f"}}>{careerName}</span></h1>
                     <div className="inst_tblcontainer2">
                         <table>
                             <thead>

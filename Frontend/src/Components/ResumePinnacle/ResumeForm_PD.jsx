@@ -85,10 +85,6 @@ const Questionnaire = () => {
     window.location.href = "./resumetemplates"
   };
 
-  // Handle city selection
-  const handleCityChange = (e) => {
-    this.setState({ city: e.target.value });
-  }
   
     // List of cities
     const cities = [
@@ -165,7 +161,7 @@ const Questionnaire = () => {
                   id="City"
                   name="City"
                   value={city}
-                  onChange={handleCityChange}
+                  onChange={(e) => setCity(e.target.value)} 
                   required
                   className='city_resume'
                 >

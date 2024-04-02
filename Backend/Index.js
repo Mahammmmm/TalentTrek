@@ -105,23 +105,6 @@ app.post("/feedback",async(req,res)=>{
 });
 
 
-//complaint api call
-app.post("/complaint",async(req,res)=>{
-    const {name,email,complaint}=req.body;
-    
-    try{
-        
-        await Complaint.create({
-            name,
-            email,
-            complaint
-        });
-        res.send({status:"ok"});
-    }catch(error){
-        res.send({status:"error"});
-    }
-});
-
 
 
 //login api call
