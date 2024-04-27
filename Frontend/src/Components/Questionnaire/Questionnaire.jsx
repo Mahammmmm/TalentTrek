@@ -2072,9 +2072,9 @@ const Questionnaire = () => {
               </div>
               <br /><br />
               <div>
-              <button type="submit" className='Qst_Buttonn' >SUBMIT</button>
-              {/* <Link to="/QstRslt"></Link>
-               */}
+              
+              <Link to="/QstRslt"><button type="submit" className='Qst_Buttonn' >SUBMIT</button></Link>
+               
               </div>
               
             </Form>

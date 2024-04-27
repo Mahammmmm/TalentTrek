@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Link,useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./PredictedCareers.css"
 import Footer from "../Footer/Footer";
 import {user,career_prediction_image,career_prediction_background} from "../../assets/index-assets"
@@ -9,7 +9,7 @@ const Questionnaire = () => {
     const [userData, setUserData] = useState("");
     const [recommendedCareers, setRecommendedCareers] = useState([]);
     const [personality,setPersonality]=useState("");
-    const { studyArea } = useParams(); // Retrieve career name from URL parameters
+    const [uniqueStudyAreas, setUniqueStudyAreas] = useState([]);
 
     useEffect(() => {
       fetch("http://localhost:3002/userData",{
@@ -56,19 +56,27 @@ const Questionnaire = () => {
         });
         //console.log(userData.email);
         const jsonData = await response.json();
-    
-        setRecommendedCareers(jsonData.personality1.recommended_careers);
-        setPersonality(jsonData.personality1.personality)
-        console.log('Careers:', recommendedCareers);
+        console.log('JSON Data:', jsonData);
+
+        setPersonality(jsonData.personality2.personality)
         console.log('Personality',personality)
+
+        setRecommendedCareers(jsonData.personality2.recommended_careers)
+        console.log('Study Areas:', recommendedCareers);
+       
+        extractUniqueStudyAreas(jsonData.personality1.recommended_careers);
+        
+       
       } catch (error) {
         console.log('Error', error);
       }
     };
-    console.log("studyArea is : ",studyArea)
-   // Filter recommended careers based on the selected study area
-   const filteredCareers = recommendedCareers.filter(career => career.Study_Area === studyArea);
-
+    
+    const extractUniqueStudyAreas = (recommendedCareers) => {
+        const studyAreas = recommendedCareers.map(career => career.Study_Area);
+        const uniqueAreas = [...new Set(studyAreas)];
+        setUniqueStudyAreas(uniqueAreas);
+    };
 
 
   return (
@@ -131,18 +139,18 @@ const Questionnaire = () => {
                         <table>
                             <thead className="fixed-header">
                                 <tr>
-                                    <th>Recommended Careers of <span style={{color:"#a8d19c"}}>{studyArea}</span></th>
-                                    <th>Recommended Institutes</th>
+                                    <th>Study Areas for <span style={{color:"#a8d19c"}}>{personality}</span> Personality</th>
+                                    <th>Careers</th>
                                 </tr>
                             </thead>
                             <tbody className="cr_tblcontainer3">
-                                {filteredCareers.map((career, index) => (
+                                {uniqueStudyAreas.map((area, index) => (
                                     <tr key={index}>
-                                        <td className='tabledata'>{career.careers}</td>
+                                        <td className='tabledata'>{area}</td>
                                         <td className='tabledata2' >
                                           
-                                        <Link to={`/predictedInstitutes/${encodeURIComponent(career.careers)}`}>
-                                          View Institutes
+                                        <Link to={`/PredictedCareers2/${encodeURIComponent(area)}`}>
+                                          View Careers
                                         </Link>
                                         </td>
                                     </tr>

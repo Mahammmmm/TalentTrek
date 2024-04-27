@@ -14,6 +14,7 @@ const Questionnaire = () => {
 
     const [logos]=useState(images);
   const [index,setIndex]=useState(0);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(()=>{
     const lastIndex=logos.length-1;
@@ -72,7 +73,17 @@ const Questionnaire = () => {
         .catch(err => console.log(err))
     },[])
 
-
+    const handleSearch = (e) => {
+      setSearchTerm(e.target.value);
+    };
+  
+    const filteredInstitutes = universities.filter((institue) => {
+      return (
+        institue.University_Name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        institue.University_City.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        institue.University_Address.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    });
 
 
   return (
@@ -148,7 +159,8 @@ const Questionnaire = () => {
 
         <section id='unitable' className='unitabel'>
 
-        
+        <input type="text"  placeholder="Search Institutes" value={searchTerm} onChange={handleSearch} className="search-input" />
+         
             <div className='tablecont'>
                 <div className="tblcontainer">
                     <table>
@@ -164,7 +176,7 @@ const Questionnaire = () => {
                         </thead>
                         <tbody>
                             {
-                                universities.map( university =>{
+                                filteredInstitutes.map( university =>{
                                     return (
                                     <tr>
                                         <td>{university.University_Name}</td>

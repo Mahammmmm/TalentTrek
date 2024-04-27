@@ -69,10 +69,10 @@ const Questionnaire = () => {
     
     
     const careers1 = () => {
-      window.location.href = "./PredictedCareers";
+      window.location.href = "./PredictedStudyArea";
     }
     const careers2 = () => {
-      window.location.href = "./PredictedCareers2";
+      window.location.href = "./PredictedStudyArea2";
     }
 
     

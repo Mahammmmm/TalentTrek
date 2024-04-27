@@ -34,7 +34,6 @@ mongoose.connect(mongoUrl, {
 //schema
 require("./userDetails")
 require("./Feedback")
-require("./Complaint")
 require("./Jobs")
 require("./Universities")
 require("./Resume")
@@ -42,7 +41,6 @@ require("./Questions")
 
 const User = mongoose.model("User");
 const Feedback = mongoose.model("Feedback");
-const Complaint = mongoose.model("Complaints");
 const Jobs = mongoose.model("Jobs");
 const Universities = mongoose.model("Universities");
 const Resume = mongoose.model("Resume");

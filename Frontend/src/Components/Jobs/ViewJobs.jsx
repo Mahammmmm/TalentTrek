@@ -14,6 +14,7 @@ const Questionnaire = () => {
 
     const [logos]=useState(images);
     const [index,setIndex]=useState(0);
+    const [searchTerm, setSearchTerm] = useState('');
   
     useEffect(()=>{
       const lastIndex=logos.length-1;
@@ -71,6 +72,17 @@ const Questionnaire = () => {
         .catch(err => console.log(err))
     },[])
 
+    const handleSearch = (e) => {
+      setSearchTerm(e.target.value);
+    };
+  
+    const filteredJobs = jobs.filter((job) => {
+      return (
+        job.Job_Title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        job.company_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        job.Location.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    });
 
 
     
@@ -146,11 +158,15 @@ const Questionnaire = () => {
 
 
 
-
+                
         <section id='jobtable' className='jobtabel'>
+        <input type="text"  placeholder="Search jobs" value={searchTerm} onChange={handleSearch} className="search-input" />
+         
             <div className='tablecont2'>
+            
                 <div className="tblcontainer2">
-                    <table>
+                
+                   <table>
                         <thead>
                             <tr>
                                 <th>Job_Title</th>
@@ -162,23 +178,22 @@ const Questionnaire = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {
-                                jobs.map( job =>{
-                                    return (
-                                    <tr>
-                                        <td>{job.Job_Title}</td>
-                                        <td>{job.company_name}</td>
-                                        <td>{job.Location}</td>
-                                        <td>
-                                        <a href={job.Company_link} target="_blank" rel="noopener noreferrer">
-                                        {job.Company_link}
-                                        </a>
-                                        </td>
-                                        <td>{job.Hiring}</td>
-                                        <td>{job.Date}</td>
-                                    </tr>)
-                                })
-                            }
+                        {filteredJobs.map((job) => {
+                          return (
+                            <tr key={job._id}>
+                              <td>{job.Job_Title}</td>
+                              <td>{job.company_name}</td>
+                              <td>{job.Location}</td>
+                              <td>
+                                <a href={job.Company_link} target="_blank" rel="noopener noreferrer">
+                                  {job.Company_link}
+                                </a>
+                              </td>
+                              <td>{job.Hiring}</td>
+                              <td>{job.Date}</td>
+                            </tr>
+                          );
+                        })}
                         </tbody>
                     </table>
                 </div>

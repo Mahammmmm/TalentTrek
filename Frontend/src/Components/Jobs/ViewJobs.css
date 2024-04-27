@@ -173,7 +173,7 @@ height: 100%;
 .tblcontainer2{
   background-color: rgb(218, 216, 216);
   position: absolute;
-  top: 230%;
+  top: 235%;
   left: 50%;
   width: 90%;
   max-height: 650px;
@@ -218,6 +218,11 @@ tbody td:hover:before {
   bottom: -9999px;
   background-color: rgba(255, 255, 255, 0.2);
   z-index: -1;
+}
+.search-input{
+  margin-top: 40px;
+  width: 900px;
+  margin-left: 180px;
 }
 
 

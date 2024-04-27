@@ -49,6 +49,8 @@ import Chatboard from "./Components/Chatboard/Chatboard.jsx"
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword.jsx"
 import Questionnaire from "./Components/Questionnaire/Questionnaire.jsx"
 import QstRslt from "./Components/Questionnaire/QuestionnaireResults.jsx"
+import PredictedStudyArea from "./Components/Questionnaire/PredictedStudyArea.jsx"
+import PredictedStudyArea2 from "./Components/Questionnaire/PredictedStudyArea2.jsx"
 import PredictedCareers from "./Components/Questionnaire/PredictedCareers.jsx"
 import PredictedCareers2 from "./Components/Questionnaire/PredictedCareers2.jsx"
 import PredictedInstitutes from "./Components/Questionnaire/PredictedInstitutes.jsx"
@@ -118,8 +120,10 @@ const isLoggedIn = window.localStorage.getItem("loggedIn");
         <Route path="q1" element={<Questionnaire />} />
         <Route path="educationform" element={<EducationForm/>}/>
         <Route path="qstrslt" element={<QstRslt />} />
-        <Route path="PredictedCareers" element={<PredictedCareers />} />
-        <Route path="PredictedCareers2" element={<PredictedCareers2 />} />
+        <Route path="PredictedStudyArea" element={<PredictedStudyArea />} />
+        <Route path="PredictedStudyArea2" element={<PredictedStudyArea2 />} />
+        <Route path="PredictedCareers/:studyArea" element={<PredictedCareers />} />
+        <Route path="PredictedCareers2/:studyArea" element={<PredictedCareers2 />} />
         <Route path="PredictedInstitutes/:careerName" element={<PredictedInstitutes />} />
         <Route path="PredictedInstitutes2/:careerName" element={<PredictedInstitutes2 />} />
       </Routes>

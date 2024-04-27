@@ -23,6 +23,10 @@ model = joblib.load('personality_predictor.joblib')
 # Load career data
 career_data = pd.read_csv('PersonalityCareers.csv')
 
+
+# Read the Excel file containing study areas
+study_areas_data = pd.read_excel('Degrees_Data.xlsx')
+
 # Load the CSV file containing universities and degrees
 universities_data = pd.read_csv('degrees_information.csv')
 
@@ -120,18 +124,14 @@ def predict():
 
 
 
-#PREDICT CAREER API
 @app.route('/predict-career', methods=['POST'])
 def predict_career():
     try:
         # Get data from the request
         data = request.get_json()
         # Fetch user data from MongoDB based on email
-        user_data = mongo.db.User.find_one({'email':data['email']})
+        user_data = mongo.db.User.find_one({'email': data['email']})
 
-        # Log the fetched user data
-        print("Fetched user data:", user_data)
-  
         if not user_data:
             return jsonify({'error': 'User not found'})
 
@@ -146,29 +146,28 @@ def predict_career():
         personality2 = predictions[0][1]
 
         # Filter out the careers for the first personality type
-        careers_personality1 = career_data[career_data['personality'] == personality1]['careers'].tolist()
+        careers_personality1 = career_data[career_data['personality'] == personality1]
 
         # Filter out the careers for the second personality type
-        careers_personality2 = career_data[career_data['personality'] == personality2]['careers'].tolist()
-        
-        
-        
+        careers_personality2 = career_data[career_data['personality'] == personality2]
+        # Merge careers data with study areas data for the first personality type
+        merged_data_personality1 = pd.merge(careers_personality1, study_areas_data, left_on='careers', right_on='Degree_Title', how='left')
 
-        # Return the predicted personalities and recommended careers for each personality type as JSON
+        # Merge careers data with study areas data for the second personality type
+        merged_data_personality2 = pd.merge(careers_personality2, study_areas_data, left_on='careers', right_on='Degree_Title', how='left')
+
         return jsonify({
             'personality1': {
                 'personality': personality1,
-                'recommended_careers': careers_personality1
+                'recommended_careers': merged_data_personality1[['careers', 'Study_Area']].to_dict(orient='records'),
             },
             'personality2': {
                 'personality': personality2,
-                'recommended_careers': careers_personality2
+                'recommended_careers': merged_data_personality2[['careers', 'Study_Area']].to_dict(orient='records'),
             }
         })
     except Exception as e:
         return jsonify({'error': str(e)})
-
-
 
 
 

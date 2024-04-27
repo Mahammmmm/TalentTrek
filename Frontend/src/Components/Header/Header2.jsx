@@ -77,7 +77,7 @@ const Header = () => {
         </div>
 
 
-        <div>
+        {/* <div>
         <ul>
         <li>
           <a href='#' className="noUnderline"><Link to="/jobs">Jobs</Link></a>
@@ -99,7 +99,7 @@ const Header = () => {
         </li>
 
         </ul>
-        </div>
+        </div> */}
       </nav>
     </header>
 

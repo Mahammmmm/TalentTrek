@@ -115,7 +115,7 @@ const Header = () => {
             Talent<span className='brown'>Trek</span>
           </a>
         </div>
-        <div>
+        {/* <div>
         <ul>
           <li>
             <a href='#' className="noUnderline" >Home</a>
@@ -134,7 +134,7 @@ const Header = () => {
             <a href='#' className="noUnderline">Resume Builder</a>
           </li>
         </ul>
-        </div>
+        </div> */}
 
         
       </nav>

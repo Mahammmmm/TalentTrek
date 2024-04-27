@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useParams } from 'react-router-dom';
 import "./PredictedCareers.css"
 import Footer from "../Footer/Footer";
 import {user,career_prediction_image,career_prediction_background} from "../../assets/index-assets"
@@ -9,6 +9,7 @@ const Questionnaire = () => {
     const [userData, setUserData] = useState("");
     const [recommendedCareers, setRecommendedCareers] = useState([]);
     const [personality,setPersonality]=useState("");
+    const { studyArea } = useParams(); // Retrieve career name from URL parameters
 
     useEffect(() => {
       fetch("http://localhost:3002/userData",{
@@ -65,7 +66,10 @@ const Questionnaire = () => {
       }
     };
     
-    
+     console.log("studyArea is : ",studyArea)
+   // Filter recommended careers based on the selected study area
+   const filteredCareers = recommendedCareers.filter(career => career.Study_Area === studyArea);
+
     // const ViewInstitutes = () => {
     //   window.location.href = "./PredictedInstitutes2";
     // }
@@ -133,16 +137,16 @@ const Questionnaire = () => {
                         <table>
                             <thead className="fixed-header">
                                 <tr>
-                                    <th>Recommended Careers for <span style={{color:"#a8d19c"}}>{personality}</span> Personality</th>
+                                    <th>Recommended Careers of <span style={{color:"#a8d19c"}}>{studyArea}</span></th>
                                     <th>Recommended Institutes</th>
                                 </tr>
                             </thead>
                             <tbody className="cr_tblcontainer3">
-                                {recommendedCareers.map((career, index) => (
+                                {filteredCareers.map((career, index) => (
                                     <tr key={index}>
-                                        <td className='tabledata'>{career}</td>
+                                        <td className='tabledata'>{career.careers}</td>
                                         <td className='tabledata2'>
-                                        <Link to={`/predictedInstitutes2/${encodeURIComponent(career)}`}>
+                                        <Link to={`/predictedInstitutes2/${encodeURIComponent(career.careers)}`}>
                                           View Institutes
                                         </Link>
                                         </td>
