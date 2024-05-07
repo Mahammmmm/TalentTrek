@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react'
 import "./Trends.css"
-import { user,Senior_Engineer,Quality_Engineer,Psychiatric_Mental_Health_Nurse_Practitioner,mechanical_engineer,Mental_Health_Technician,Data_Engineer,Behavioral_Health_Professional,attorny,Controller,Psychiatric_Nurse,Senior_Accountant,Real_Estate_Analyst,Civil_Engineer,Psychiatrist,Medical_Director,Construction_Project_Manager,Supply_Chain_Specialist,Tax_Manager,Electrical_Engineer} from '../../assets/index-assets'
+import { user,Artificial_IntelligenceandMachine_Learning,Content_Creation,Urban_Planning_and_Development,Cloud_Computing,OnlineTeachingInstruction,Social_Media_Management,Data_Engineer,Fashion_Designing_and_Merchandising,Environmental_Engineer,Content_Writing_and_Blogging,E_commerce_Management,Cybersecurity,Graphic_Designing,Data_Scienceand_Analytics,Remote_Work_Facilitator,Financial_Analysis,Renewable_Energy_Engineering,Mobile_App_Development,Cryptocurrency_Trading_and_Blockchain_Development,Sustainable_Agriculture_Expert} from '../../assets/index-assets'
 import { Link } from 'react-router-dom';
 import Footer from "../Footer/Footer";
 
@@ -111,7 +111,9 @@ const Trends = () =>{
                 </section>
 
 
-
+                <div>
+                    <h1 className='trendingcareereheading'>TRENDING CAREERS FOR 2025</h1>
+                </div>
 
                 <section id="Trends" className='DisplayCareers'>
                     <div className="careers-container">
@@ -124,7 +126,7 @@ const Trends = () =>{
                             <div className="card" key={index}>
                                 <img src={getCareerName(career)} alt={career} className="career-icon" />
                                 <h5>{career}</h5>
-                                <p>{getDescription(career)}</p>
+                                {/* <p>{getDescription(career)}</p> */}
                             </div>
                             ))}
                         </div>
@@ -139,46 +141,46 @@ const Trends = () =>{
 //Function to get personality images
 const getCareerName = (career) => {
     switch (career) {
-        case 'Mechanical Engineer':
-            return mechanical_engineer;
-        case 'Attorney':
-            return attorny;
-        case 'Behavioral Health Professional':
-            return Behavioral_Health_Professional;
-        case 'Quality Engineer':
-            return Quality_Engineer;
-        case 'Mental Health Technician':
-            return Mental_Health_Technician;
-        case 'Senior Engineer':
-            return Senior_Engineer;
-        case 'Data Engineer':
+        case 'Online Teaching/Instruction':
+            return OnlineTeachingInstruction;
+        case 'Environmental Engineer':
+            return Environmental_Engineer;
+        case 'Fashion Designing and Merchandising':
+            return Fashion_Designing_and_Merchandising;
+        case 'Urban Planning and Development':
+            return Urban_Planning_and_Development;
+        case 'Social Media Management':
+            return Social_Media_Management;
+        case 'Content Creation (Blogging, Vlogging)':
+            return Content_Creation;
+        case 'Software Development':
                 return Data_Engineer;
-        case 'Psychiatric Mental  Health Nurse Practitioner':
-            return Psychiatric_Mental_Health_Nurse_Practitioner;
-        case 'Electrical Engineer':
-            return Electrical_Engineer;
-        case 'Tax Manager':
-            return Tax_Manager;
-        case 'Supply Chain Specialist':
-            return Supply_Chain_Specialist;
-        case 'Construction Project Manager':
-            return Construction_Project_Manager;
-        case 'Medical Director':
-            return Medical_Director;
-        case 'Controller':
-            return Controller;
-        case 'Psychiatrist':
-            return Psychiatrist;
-        case 'Real Estate Analyst':
-            return Real_Estate_Analyst;
-        case 'Mental Health Therapist':
-            return Mental_Health_Technician;
-        case 'Senior Accountant':
-            return Senior_Accountant;
-        case 'Psychiatric Nurse':
-            return Psychiatric_Nurse;
-        case 'Civil Engineer':
-            return Civil_Engineer;
+        case 'Cloud Computing Specialist':
+            return Cloud_Computing;
+        case 'Sustainable Agriculture Expert':
+            return Sustainable_Agriculture_Expert;
+        case 'Cryptocurrency Trading and Blockchain Development':
+            return Cryptocurrency_Trading_and_Blockchain_Development;
+        case 'Mobile App Development':
+            return Mobile_App_Development;
+        case 'Renewable Energy Engineering':
+            return Renewable_Energy_Engineering;
+        case 'Financial Analysis and Investment Banking':
+            return Financial_Analysis;
+        case 'Content Writing and Blogging':
+            return Content_Writing_and_Blogging;
+        case 'Remote Work Facilitator':
+            return Remote_Work_Facilitator;
+        case 'Graphic Designing':
+            return Graphic_Designing;
+        case 'Artificial Intelligence and Machine Learning':
+            return Artificial_IntelligenceandMachine_Learning;
+        case 'Cybersecurity':
+            return Cybersecurity;
+        case 'E-commerce Management':
+            return E_commerce_Management;
+        case 'Data Science and Analytics':
+            return Data_Scienceand_Analytics;
         default:
             return '';
     }
@@ -186,50 +188,50 @@ const getCareerName = (career) => {
 
   
 //Function to get personality images
-const getDescription = (career) => {
-    switch (career) {
-        case 'Mechanical Engineer':
-            return "The work of mechanical engineers plays a crucial role in shaping the technology and infrastructure that drive our modern world";
-        case 'Attorney':
-            return "The best lawyers are creative. Your ability to think creatively can make the difference between finding a unique solution or ultimately losing in court";
-        case 'Behavioral Health Professional':
-            return "Behavioral health professionals play a crucial role in promoting mental well-being. They often provide counseling and therapy sessions";
-        case 'Quality Engineer':
-            return "Quality engineers review established processes in order to find manufacturing and cost optimizations";
-        case 'Mental Health Technician':
-            return "A Mental Health Technician is a professional who provides support to mental healthcare professionals in hospitals, private institutions or patient residences";
-        case 'Senior Engineer':
-            return "Senior Engineer provide technical supervision and technical and administrative support and guidance to other engineers";
-        case 'Data Engineer':
-                return "Data engineers work in a variety of settings to build systems that collect, manage, and convert raw data into usable information";
-        case 'Psychiatric Mental  Health Nurse Practitioner':
-            return "They manage a wide array of mental health conditions, often employing strategies such as prescribing medications, psychotherapy, and counseling";
-        case 'Electrical Engineer':
-            return "Electrical engineers design, develop, test, and supervise the manufacture of electrical equipment";
-        case 'Tax Manager':
-            return "Tax managers oversee their clients' tax planning, preparation, and filing. They build and maintain relationships with businesses and individuals to provide tax support or services";
-        case 'Supply Chain Specialist':
-            return "A Supply Chain Specialist coordinates shipments and works to improve supply chain processes at a company or organization";
-        case 'Construction Project Manager':
-            return "Construction manager oversee work schedules and coordinate subcontractors, determine material and labour costs, regularly report progress to clients and stakeholders";
-        case 'Medical Director':
-            return "Recruiting and managing physicians, nurses, paramedics and other medical and non-medical staff";
-        case 'Controller':
-            return "Protects assets by establishing, monitoring, and enforcing internal controls. Monitors and confirms financial conditions";
-        case 'Psychiatrist':
-            return "Psychiatrists are trained physicians who specialize in mental health. They evaluate, diagnose, and treat psychiatric disorders";
-        case 'Real Estate Analyst':
-            return "Real estate analysts manage the real estate investments of organizations that have significant property holdings";
-        case 'Mental Health Therapist':
-            return "A mental health therapist is a professional who specializes in treating mental health conditions and emotional difficulties";
-        case 'Senior Accountant':
-            return "Senior Accountants take ownership of reporting costs, productivity, margins and expenditures for companies and organizations";
-        case 'Psychiatric Nurse':
-            return "Psychiatric nurse thus include coordinator of community development, psychotherapist, mental health educator";
-        case 'Civil Engineer':
-            return "Civil engineers create, improve and protect the environment in which we live. They plan, design and oversee construction and maintenance of buildings";
-        default:
-            return '';
-    }
-  };
+// const getDescription = (career) => {
+//     switch (career) {
+//         case 'Online Teaching/Instruction':
+//             return "";
+//         case 'Environmental Engineer':
+//             return "";
+//         case 'Fashion Designing and Merchandising':
+//             return "";
+//         case 'Urban Planning and Development':
+//             return "";
+//         case 'Social Media Management':
+//             return "";
+//         case 'Content Creation (Blogging, Vlogging)':
+//             return "";
+//         case 'Software Development':
+//                 return "";
+//         case 'Cloud Computing Specialist':
+//             return "";
+//         case 'Sustainable Agriculture Expert':
+//             return "";
+//         case 'Cryptocurrency Trading and Blockchain Development':
+//             return "";
+//         case 'Mobile App Development':
+//             return "";
+//         case 'Renewable Energy Engineering':
+//             return "";
+//         case 'Financial Analysis and Investment Banking':
+//             return "";
+//         case 'Content Writing and Blogging':
+//             return "";
+//         case 'Remote Work Facilitator':
+//             return "";
+//         case 'Graphic Designing':
+//             return "";
+//         case 'Artificial Intelligence and Machine Learning':
+//             return "";
+//         case 'Cybersecurity':
+//             return "";
+//         case 'E-commerce Management':
+//             return "";
+//         case 'Data Science and Analytics':
+//             return "";
+//         default:
+//             return '';
+//     }
+//   };
 export default Trends

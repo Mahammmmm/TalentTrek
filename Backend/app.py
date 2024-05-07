@@ -8,6 +8,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.compose import ColumnTransformer
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import Pipeline
+from sklearn.model_selection import train_test_split
 
 
 app = Flask(__name__ )
@@ -27,14 +28,14 @@ model = joblib.load('personality_predictor.joblib')
 # Load career data
 career_data = pd.read_csv('PersonalityCareers.csv')
 
-
 # Read the Excel file containing study areas
 study_areas_data = pd.read_excel('Degrees_Data.xlsx')
 
 # Load the CSV file containing universities and degrees
 universities_data = pd.read_csv('degrees_information.csv')
 
-
+#Load CSV file
+data = pd.read_csv("PakistanCareers.csv")
 
 
 
@@ -233,27 +234,22 @@ def predict_career_universities():
         return jsonify({'error': str(e)})
 
 
-
-
-# Load the dataset
-data = pd.read_csv("PreviousTrendingCareers.csv")  # Replace "PreviousTrendingCareers.csv" with the actual file path
-# Get unique career labels from the dataset
-unique_career_labels_before = data["career"].unique()
-
-# Generate career label mapping dynamically
-career_mapping = {career_label: idx + 1 for idx, career_label in enumerate(unique_career_labels_before)}
-
-# Replace non-numeric career labels with numeric labels using map
-data["career"] = data["career"].map(career_mapping)
+# Engineering features for ranking and repeatedness
+career_counts = data['career'].value_counts()
+data['career_rank'] = data['career'].map({career: rank for rank, career in enumerate(career_counts.index, 1)})
+data['career_frequency'] = data['career'].map(career_counts)
 
 # Create features and target variable
-features = ["year"]
+features = ["year", "career_rank", "career_frequency"]
 target = "career"
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(data[features], data[target], test_size=0.2, random_state=42)
 
 # Define preprocessing steps
 preprocessor = ColumnTransformer(
     transformers=[
-        ('num', StandardScaler(), ['year']),  # Scale numerical features
+        ('num', StandardScaler(), ['year', 'career_rank', 'career_frequency']),  # Scale numerical features
     ],
     remainder='passthrough'  # Pass through any remaining columns
 )
@@ -267,29 +263,27 @@ pipeline = Pipeline([
     ('classifier', model)
 ])
 
-# Fit the pipeline on the entire data
-pipeline.fit(data[features], data[target])
+# Fit the pipeline on the training data
+pipeline.fit(X_train, y_train)
 
 @app.route('/predictTrends', methods=['POST'])
-def predictTrends():
-    #if request.method == 'GET':
-        # Get the input year from the request data
-        # input_data = request.get_json()
-        # year = input_data['year']
-        
-        # Make predictions for the input year
-        new_data = pd.DataFrame({"year": [2025]})
-        probabilities = pipeline.predict_proba(new_data)
-        
-        # Get the top 20 predicted careers
-        top_20_indices = probabilities.argsort()[0][-20:][::-1]
-        top_20_careers = [unique_career_labels_before[idx] for idx in top_20_indices]
-        
-        # Prepare the response
-        response = {
-            "predictions": top_20_careers
-        }
-        return jsonify(response)
+def predictCareers():
+    # Create new data for prediction
+    new_data = pd.DataFrame({"year": [2025], "career_rank": [21], "career_frequency": [1]})
+
+    # Make predictions for the new data
+    probabilities = pipeline.predict_proba(new_data)
+
+    # Get the top 20 predicted careers
+    top_20_indices = probabilities.argsort()[0][-20:][::-1]
+    top_20_careers = [data['career'].unique()[career_idx - 1] for career_idx in top_20_indices]
+
+    # Prepare the response
+    response = {
+        "predictions": top_20_careers
+    }
+    return jsonify(response)
+
 
 
 

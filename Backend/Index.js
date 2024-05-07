@@ -787,32 +787,6 @@ app.listen(3002,()=>{
     console.log("Server started");
 });
 
-//video call
-// const  { Server} = require("socket.io");
 
-// const io= new Server(443,{
-//   cors: true,
-// });
-
-// const emailToSocketIdMap = new Map();
-// const socketidToEmailMap = new Map();
-
-// io.on("connection", (socket) => {
-//   console.log('Socket Connected', socket.id);
-  
-//   socket.on('room:join', data => {
-//     console.log('Room join event received:', data);
-//     const { email, room } = data;
-//     emailToSocketIdMap.set(email, socket.id);
-//     socketidToEmailMap.set(socket.id, email);
-//     io.to(room).emit('user:joined', { email }); // Emit 'user:joined' event with email and socket id
-//     socket.join(room);
-//     io.to(socket.id).emit('room:join', data); // Emit 'room:join' event back to the sender
-// });
-// // Debug log to check if 'user:joined' event is being emitted
-// socket.on('user:joined', (data) => {
-//   console.log('user:joined event emitted:', data);
-// });
-// });
 
 

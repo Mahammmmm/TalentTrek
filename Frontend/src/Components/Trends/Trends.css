@@ -89,4 +89,9 @@
   .card p {
     margin-bottom: 0;
   }
-  
+  .trendingcareereheading{
+    font-family: Holtwood One SC;
+    font-size: 30px;
+    text-align:right;
+    margin-right: 5%;
+  }
