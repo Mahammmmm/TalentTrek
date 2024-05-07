@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Router, Routes, Route } from 'react-router-dom';
 import Login from "./Components/LoginPage/LoginPage.jsx"
 import Signup from "./Components/SignUpPage/SignUpPage.jsx"
 import Main from "./Components/Header/Header.jsx"
@@ -47,6 +47,7 @@ import UserProfile from "./Components/UserProfile/UserProfile.jsx"
 import Feedback from "./Components/Feedback/Feedback.jsx"
 import Chatboard from "./Components/Chatboard/Chatboard.jsx"
 import UpdatePassword from "./Components/UpdatePassword/UpdatePassword.jsx"
+import CounsellersPage from "./Components/Counselling/CounsellersPage.jsx"
 import Questionnaire from "./Components/Questionnaire/Questionnaire.jsx"
 import QstRslt from "./Components/Questionnaire/QuestionnaireResults.jsx"
 import PredictedStudyArea from "./Components/Questionnaire/PredictedStudyArea.jsx"
@@ -59,14 +60,40 @@ import ViewInstitutes from "./Components/Institutes/ViewInstitutes.jsx"
 import ViewJobs from "./Components/Jobs/ViewJobs.jsx"
 import EducationForm from "./Components/EducationForm/EducationForm.jsx"
 import Main2 from "./Components/Header/Header2.jsx"
+import Trends from "./Components/Trends/Trends.jsx"
+import FirstPage from "./Components/Header/FirstScreen.jsx"
+import CounselorHome from "./Components/CounselorScreens/HomePage.jsx"
+import CounselorLogin from "./Components/CounselorScreens/Login.jsx"
+import Schedule from './Components/CounselorScreens/Schedule.jsx'
+import Messages from './Components/CounselorScreens/Messages.jsx'
+import Profile from './Components/CounselorScreens/Profile.jsx'
+import EditProfile from "./Components/CounselorScreens/EditProfile.jsx"
+// import BookCounselor from "./Components/Counselling/BookCounselor.jsx"
+
+
 const App = () => {
 
 const isLoggedIn = window.localStorage.getItem("loggedIn");
-
+const CounselorloggedIn=window.localStorage.getItem("CounselorloggedIn");
   return (
-    <Router>
       <Routes>
-      <Route path="/" element={isLoggedIn == "true" ?<Main2 /> : <Main/>} />
+        {/* <Route path='/' element={<FirstPage/>}/> */}
+        {/* <Route path="/" element={isLoggedIn == "true" ?<Main2 /> : <FirstPage/>} />
+        <Route path="/" element={CounselorloggedIn == "true" ?<CounselorHome /> : <FirstPage/>} /> */}
+
+        <Route path="/" element={isLoggedIn ? <Main2 /> : CounselorloggedIn ? <CounselorHome /> : <FirstPage />} />
+        <Route path="CounselorLogin" element={<CounselorLogin />} />
+        <Route path="CounselorHome" element={<CounselorHome />} />
+        <Route path="Schedule" element={<Schedule />} />
+        <Route path="Messages" element={<Messages />} />
+        <Route path="Profile" element={<Profile />} />
+        <Route path="EditProfile" element={<EditProfile />} />
+
+
+
+
+
+        <Route path="main" element={<Main />} />
         <Route path="main2" element={<Main2 />} />
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
@@ -117,6 +144,8 @@ const isLoggedIn = window.localStorage.getItem("loggedIn");
         <Route path="updatepassword" element={<UpdatePassword/>}/>
         <Route path="viewinstitutes" element={<ViewInstitutes/>}/>
         <Route path="viewjobs" element={<ViewJobs/>}/>
+        <Route path="Trends" element={<Trends/>}/>
+        <Route path="CounsellersPage" element={<CounsellersPage/>}/>
         <Route path="q1" element={<Questionnaire />} />
         <Route path="educationform" element={<EducationForm/>}/>
         <Route path="qstrslt" element={<QstRslt />} />
@@ -126,8 +155,9 @@ const isLoggedIn = window.localStorage.getItem("loggedIn");
         <Route path="PredictedCareers2/:studyArea" element={<PredictedCareers2 />} />
         <Route path="PredictedInstitutes/:careerName" element={<PredictedInstitutes />} />
         <Route path="PredictedInstitutes2/:careerName" element={<PredictedInstitutes2 />} />
+        {/* <Route path="BookCounselor/:counseloremail" element={<BookCounselor/>}/> */}
       </Routes>
-    </Router>
+    
   );
 };
 

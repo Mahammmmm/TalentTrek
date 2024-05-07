@@ -9,7 +9,7 @@ const Questionnaire = () => {
     const [userData, setUserData] = useState("");
     const [recommendedCareers, setRecommendedCareers] = useState([]);
     const [personality,setPersonality]=useState("");
-    const { studyArea } = useParams(); // Retrieve career name from URL parameters
+    const { studyArea } = useParams(); 
 
     useEffect(() => {
       fetch("http://localhost:3002/userData",{

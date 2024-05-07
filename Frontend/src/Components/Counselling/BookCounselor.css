@@ -1,0 +1,55 @@
+.counselling_bg4{ 
+    display: flex;
+}
+.counselor-card2 {
+    width: 35%;
+    margin-left: 5%;
+    height: auto;
+    margin-bottom: 5%; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    text-align: center;
+}
+.counselor-card2 h3{
+    font-family: Hammersmith One;
+    text-align: center;
+    color: rgb(204, 128, 29);
+}
+.counselor-image2 {
+    width: 40%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.counselor-info-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.booking-section {
+    width: 35%;
+    height: auto;
+    margin-right: 5%;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 63px;
+}
+
+.booking-section h1 {
+    color: #6d6666;
+    font-family: Hammersmith One;
+    font-size: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.form-group select{
+    width: 100%;
+    margin-left: 0%;
+}
+.sessionButton{
+    background-color: rgba(204, 128, 29, 0.927);
+    margin-left: 33%;
+}

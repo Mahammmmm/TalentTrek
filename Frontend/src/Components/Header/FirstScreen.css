@@ -1,0 +1,64 @@
+.FirstScreenBg {
+    display: flex;
+    min-height: 100vh;
+  }
+  
+  .firstDiv {
+    flex: 1; 
+    /* background-color: rgb(208, 231, 250); */
+  }
+  
+  .secondDiv {
+    flex: 1; 
+    background-color: beige;
+    /* background-color: rgb(164, 183, 206); */
+  }
+  .Counselor_Bg{
+    width: 50%;
+    height: 40%;
+    margin-left: 23%;
+    margin-top: -65%;
+  }
+  .FirstScreenH1{
+    margin-left: 71%;
+    font-family: Holtwood One SC;
+    color: rgb(149, 149, 116);
+    /* color: rgb(164, 183, 206); */
+  }
+  .FirstScreenH2{
+    margin-left: 2%;
+    font-family: Holtwood One SC;
+    /* color: rgb(208, 231, 250); */
+  }
+  .FirstScreenH3{
+    text-align: center;
+    margin-top: 14%;
+    font-size: 23px;
+    font-weight: bold;
+  }
+  .Student_Bg{
+    width: 50%;
+    height: 40%;
+    margin-left: 23%;
+    margin-top: -70%;
+  }
+ .FirstScreenButton{
+    margin-top: 55%;
+    background-color: black;
+    border-radius: 20px;
+    margin-left: -38%;
+ }
+ .FirstScreenButton2{
+    margin-top: 55%;
+    background-color: black;
+    border-radius: 20px;
+    margin-left: -35%;
+ }
+ .FirstScreenButton:hover{
+    background-color: rgb(67, 70, 73);
+ }
+ .FirstScreenButton2:hover{
+    background-color: rgb(67, 70, 73);
+ }
+  
+  

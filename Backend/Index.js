@@ -38,6 +38,7 @@ require("./Jobs")
 require("./Universities")
 require("./Resume")
 require("./Questions")
+require("./Counsellors")
 
 const User = mongoose.model("User");
 const Feedback = mongoose.model("Feedback");
@@ -45,6 +46,7 @@ const Jobs = mongoose.model("Jobs");
 const Universities = mongoose.model("Universities");
 const Resume = mongoose.model("Resume");
 const Questions = mongoose.model("Chatboard");
+const Counsellors = mongoose.model("Counsellors");
 //API Calls
 
 
@@ -122,6 +124,25 @@ app.post("/login-user", async (req, res) => {
     }
 
     res.json({ status: "error", error: "Invalid Password" });
+});
+
+//Counselor login api call
+app.post("/login-counselor", async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await Counsellors.findOne({ email });
+  if (!user) {
+      return res.json({ error: "Counselor Not Found" });
+  }
+  // Compare the provided password with the stored password in the database
+  if (password === user.password) {
+      const token = jwt.sign({email: user.email}, JWT_SECRET , {expiresIn:"24h"});
+      //console.log(token);
+      // Send the token as part of the response
+      return res.json({ status: "ok", data: token });
+  }
+
+  res.json({ status: "error", error: "Invalid Password" });
 });
 
 
@@ -694,9 +715,104 @@ app.get('/getFeedback', async (req, res) => {
 });
 
 
+
+
+
+// API endpoint to fetch counselor data
+app.get('/getCounselors', async (req, res) => {
+  try {
+      // Fetch counselor data from the database
+      const counselors = await Counsellors.find();
+      res.json(counselors);
+  } catch (error) {
+      console.error('Error fetching counselor data:', error);
+      res.status(500).json({ error: 'Internal Server Error' });
+  }
+});
+
+app.post("/CounselorsData", async (req, res) => {
+  const { token } = req.body;
+  try {
+    const user = jwt.verify(token, JWT_SECRET, (err, decoded) => {
+      if (err) {
+        return { error: "token expired" };
+      }
+      return decoded;
+    });
+    console.log(user);
+    if (user.error === "token expired") {
+      return res.status(401).json({ status: "error", data: "token expired" }); // Send 401 Unauthorized status
+    }
+
+    const useremail = user.email;
+    Counsellors.findOne({ email: useremail })
+      .then((data) => {
+        res.send({ status: "ok", data: data });
+      })
+      .catch((error) => {
+        res.send({ status: "error", data: error });
+      });
+  } catch (error) { }
+});
+
+
+
+
+
+//update user data api call
+app.post("/updateCounselor", async(req,res) => {
+     
+  const {id , name, email,  password,gender,  phoneNumber } = req.body;
+  try{
+      await Counsellors.updateOne({_id: id},
+          {
+              $set:{
+                      name: name,
+                      password:password,
+                      email: email,
+                      gender: gender,
+                      phoneNumber: phoneNumber,
+                      
+              }
+          })
+          return res.json({status: "ok", data:"updated"});
+
+  }catch(error){
+      return res.json({status: "error", data:error})
+  }
+});
+
 //server
 app.listen(3002,()=>{
     console.log("Server started");
 });
+
+//video call
+// const  { Server} = require("socket.io");
+
+// const io= new Server(443,{
+//   cors: true,
+// });
+
+// const emailToSocketIdMap = new Map();
+// const socketidToEmailMap = new Map();
+
+// io.on("connection", (socket) => {
+//   console.log('Socket Connected', socket.id);
+  
+//   socket.on('room:join', data => {
+//     console.log('Room join event received:', data);
+//     const { email, room } = data;
+//     emailToSocketIdMap.set(email, socket.id);
+//     socketidToEmailMap.set(socket.id, email);
+//     io.to(room).emit('user:joined', { email }); // Emit 'user:joined' event with email and socket id
+//     socket.join(room);
+//     io.to(socket.id).emit('room:join', data); // Emit 'room:join' event back to the sender
+// });
+// // Debug log to check if 'user:joined' event is being emitted
+// socket.on('user:joined', (data) => {
+//   console.log('user:joined event emitted:', data);
+// });
+// });
 
 

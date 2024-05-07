@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+}
+
+.big-box {
+    width: 600px; 
+    height: 450px; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.334); /* Add shadow effect */
+}
+
+.top{
+    background-color:beige;
+    padding: 10px;
+    font-weight: bold;
+    text-align: right;
+}
+
+.name{
+    font-weight: bold;
+    font-size: xx-large;
+    margin-left: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.row {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.label {
+    width: 150px;
+    font-weight: bold;
+    
+    margin-left: 22px; /* Remove the margin-left */
+    
+}
+
+.value {
+    flex: 1;
+}

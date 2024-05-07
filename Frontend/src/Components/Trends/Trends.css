@@ -1,0 +1,92 @@
+.trendsbg{
+    min-height: 100vh;
+}
+.trendsbg::before {
+    content: "";
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 70%;
+    height: 70%;
+    background-image: url('../../assets/TrendsPrediction2.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.trendscontent {
+    position: absolute;
+    top: 60%;
+    left: 62%; 
+    transform: translateY(-50%);
+    
+    width: 35%;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+   text-align: center;
+  }
+  
+  .trendscontent p {
+    text-align: center;
+    color: rgb(8, 15, 149);
+  }
+  .trendscontent h1 {
+    text-align: center;
+    font-family: Hammersmith One;
+    color: rgb(37, 46, 215);
+  }
+
+
+
+
+
+  .DisplayCareers {
+    padding: 30px;
+  }
+  
+  .careers-container {
+    display: flex;
+    /* flex-direction: row;
+    align-items: flex-start;*/
+ } 
+ .fixedText {
+  width: 20%;
+  position: fixed;
+  top: 60%; 
+  transform: translateY(-50%);
+}
+  .fixedText h1 {
+    font-family: Holtwood One SC;
+    color: rgb(29, 33, 105);
+    font-size: 35px;
+ }
+  
+  .cards-container {
+    margin-left: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+  
+  .card {
+    width: calc(30% - -10px); 
+    margin: 10px;
+    padding: 20px;
+   
+  }
+  
+  .card img {
+    width: 100%; /* Adjust as needed */
+    height: 100%; /* Adjust as needed */
+    margin-bottom: 10px;
+  }
+  
+  .card h5 {
+    margin-bottom: 5px;
+    font-weight: bolder;
+    text-align: center;
+  }
+  
+  .card p {
+    margin-bottom: 0;
+  }
+  

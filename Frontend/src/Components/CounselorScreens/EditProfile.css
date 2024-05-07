@@ -1,0 +1,61 @@
+.CounslerProfile_container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 90vh; 
+}
+
+.CounslerProfile_big-box {
+    width: 600px; 
+    height: 520px; 
+    background-color: white; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.334); /* Add shadow effect */
+}
+
+.CounslerProfile_name{
+    font-weight: bold;
+    font-size: xx-large;
+    margin-left: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.CounslerProfile_row {
+    display: flex;
+    margin-bottom: 10px;
+}
+.CounslerProfile_row select{
+    width: 378%;
+    margin-left: 0;
+}
+.CounslerProfile_label {
+    width: 150px;
+    font-weight: bold;
+    
+    margin-left: 32px; /* Remove the margin-left */
+    
+}
+
+.CounslerProfile_value {
+    flex: 1;
+    border-color: rgb(146, 146, 109);
+    width: 90px;
+    margin-right: 2%;
+}
+
+.CounslerProfile_center-button {
+    display: flex;
+    justify-content: center;
+}
+.CounslerProfile_submit{
+    background-color: rgb(206, 206, 150);
+    height: 35px;
+    width: 120px;
+    border-color: beige;
+    border-radius: 5%;
+    font-weight: bold;
+}
+.CounslerProfile_submit :hover{
+    background-color: black;
+}

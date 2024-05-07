@@ -65,7 +65,10 @@
     margin-top: 10px;
   }
   
- 
+  
+  
+  
+  
   .Qst_Buttonn{
     margin-top: 10px; /* Adjust margin as needed */
     margin-bottom: 30px;
@@ -108,11 +111,23 @@
   background-color: #e0e0e0; /* Replace with your desired background color */
   border: 1px solid #ccc; /* Add border for better visibility */
 }
+
 .Qst-form{
   width: 110vh;
   background: white;
-    box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.25);
     
+}
+.Qst-form label {
+  display: flex;
+  align-items: center;
+  margin-right: 200px; /* Adjust spacing between checkbox and question */
+  margin-bottom: 20px; /* Adjust vertical spacing between each question */
+}
+
+.Qst-form label input[type="checkbox"] {
+  margin-right: -200px; 
+  margin-left: -230px;
 }
 
 

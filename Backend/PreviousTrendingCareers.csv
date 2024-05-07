@@ -1,0 +1,190 @@
+year,career,ranking,studyArea
+2019,Machine Learning Engineer,1,ComputerSciencesAndInformationTechnology
+2019,Insurance Broker,2,Commerce_FinanceAndAcounting
+2019,Full-stack Developer,3,ComputerSciencesAndInformationTechnology
+2019,Insurance Advisor,4,Commerce_FinanceAndAcounting
+2019,Litigation Attorney,5,SocialSciences
+2019,Litigation Associate,6,SocialSciences
+2019,Dental Hygienist,7,BiologicalAndLifeSciences
+2019,Associate Attorney,8,ManagementSciences
+2019,Realtor,9,Commerce_FinanceAndAcounting
+2019,Salesforce Developer,10,ComputerSciencesAndInformationTechnology
+2019,Robotics Engineer,11,Engineering
+2019,Senior Product Designer,12,ArtAndDesign
+2019,Computer Vision Engineer,13,ComputerSciencesAndInformationTechnology
+2019,Psychotherapist,14,SocialSciences
+2019,Product Owner,15,ManagementSciences
+2019,Liscensed Clinical Social Worker,16,SocialSciences
+2019,Senior Supply Chain Specialist,17,ManagementSciences
+2019,Agile Coach,18,ManagementSciences
+2019,Construction Estimator,19,Engineering
+2019,Veterinarian,20,BiologicalAndLifeSciences
+2019,Construction Superintendent,21,Engineering
+2019,Data Scientist,22,ComputerSciencesAndInformationTechnology
+2019,Certified Public Accountant,23,Commerce_FinanceAndAcounting 
+2019,Project Architect,24,ArtAndDesign
+2019,Senior Financial Consultant,25,Commerce_FinanceAndAcounting
+2020,Software Architect,1,ComputerSciencesAndInformationTechnology
+2020,Full-stack Developer,2,ComputerSciencesAndInformationTechnology
+2020,Real Estate Agent,3,Commerce_FinanceAndAcounting
+2020,Dentist,4,BiologicalAndLifeSciences
+2020,Development Operations Engineer,5,ComputerSciencesAndInformationTechnology
+2020,Electrical Engineer,6,Engineering
+2020,Java Developer,7,ComputerSciencesAndInformationTechnology
+2020,Data Scientist,8,ComputerSciencesAndInformationTechnology
+2020,IT Security Specialist,9,ComputerSciencesAndInformationTechnology
+2020,Sales Director,10,Commerce_FinanceAndAcounting
+2020,Product Owner,11,ManagementSciences
+2020,Data Engineer,12,ComputerSciencesAndInformationTechnology
+2020,Finance Manager,13,Commerce_FinanceAndAcounting
+2020,Veterinarian,14,BiologicalAndLifeSciences
+2020,Scientist,15,BiologicalAndLifeSciences
+2020,Superintendent,16,Engineering
+2020,Civil Engineer,17,Engineering
+2020,Attorney,18,ManagementSciences
+2020,Controller,19,ManagementSciences
+2020,Cloud Engineer,20,ComputerSciencesAndInformationTechnology
+2020,HR Business Partner,21,ManagementSciences
+2020,Internal Medicine Physician,22,MedicalSciences
+2020,IT Technician,23,ComputerSciencesAndInformationTechnology
+2020,Primary Care Physician,24,MedicalSciences
+2020,Architect,25,ArtAndDesign
+2021,Java Developer,1,ComputerSciencesAndInformationTechnology
+2021,Data Scientist,2,ComputerSciencesAndInformationTechnology
+2021,Product Manager,3,ManagementSciences
+2021,Enterprise Architect,4,ComputerSciencesAndInformationTechnology
+2021,DevOps Engineer,5,ComputerSciencesAndInformationTechnology
+2021,Information Security Engineer,6,ComputerSciencesAndInformationTechnology
+2021,Business Development Manager,7,Commerce_FinanceAndAcounting
+2021,Mobile Engineer,8,ComputerSciencesAndInformationTechnology
+2021,Software Engineer,9,ComputerSciencesAndInformationTechnology
+2021,Dentist,10,BiologicalAndLifeSciences
+2021,Frontend Engineer,11,ComputerSciencesAndInformationTechnology
+2021,HR Business Partner,12,ManagementSciences
+2021,Strategy Manager,13,ManagementSciences
+2021,Salesforce Developer,14,ComputerSciencesAndInformationTechnology
+2021,Automation Engineer,15,Engineering
+2021,Backend Engineer,16,ComputerSciencesAndInformationTechnology
+2021,Machine Learning Engineer,17,ComputerSciencesAndInformationTechnology
+2021,Product Marketing Manager,18,ManagementSciences
+2021,Tax Manager,19,Commerce_FinanceAndAcounting
+2021,Program Manager,20,ManagementSciences
+2022,Registered Nurse,1,MedicalSciences
+2022,Optometrist,2,MedicalSciences
+2022,Site Reliability Engineer,3,ComputerSciencesAndInformationTechnology
+2022,Real Estate Agent,4,Commerce_FinanceAndAcounting
+2022,Pharmacist,5,BiologicalAndLifeSciences
+2022,Software Engineer,6,ComputerSciencesAndInformationTechnology
+2022,Nurse Practitioner,7,MedicalSciences
+2022,Product Designer,8,ArtAndDesign
+2022,Solar Consultant,9,EarthAndEnvironmentalSciences
+2022,Growth Manager,10,ManagementSciences
+2022,Banking Associate,11,Commerce_FinanceAndAcounting
+2022,C++ Developer,12,ComputerSciencesAndInformationTechnology
+2022,IT consultant,13,ComputerSciencesAndInformationTechnology
+2022,Operations Engineer,14,Engineering
+2022,Land Manager,15,EarthAndEnvironmentalSciences
+2022,Backend Engineer,16,ComputerSciencesAndInformationTechnology
+2022,HR Business Partner,17,ManagementSciences
+2022,Communications Manager,18,MediaStudies
+2022,Asset Manager,19,Commerce_FinanceAndAcounting
+2023,Full-stack Developer,1,ComputerSciencesAndInformationTechnology
+2023,Data Engineer,2,ComputerSciencesAndInformationTechnology
+2023,Cloud Engineer,3,ComputerSciencesAndInformationTechnology
+2023,Psychiatric nurse,4,MedicalSciences
+2023,Senior Product Manager,5,ManagementSciences
+2023,Backend Engineer,6,ComputerSciencesAndInformationTechnology
+2023,Site Reliability Engineer,7,ComputerSciencesAndInformationTechnology
+2023,Machine Learning Engineer,8,ComputerSciencesAndInformationTechnology
+2023,Psychiatric Mental  Health Nurse Practitioner,9,MedicalSciences
+2023,Product Designer,10,ArtAndDesign
+2023,Licensed Professional Counselor,11,SocialSciences
+2023,Real Estate Agent,12,Commerce_FinanceAndAcounting
+2023,Solar Consultant,13,EarthAndEnvironmentalSciences
+2023,Logistics Manager,14,ManagementSciences
+2023,Diversity and Inclusion Manager,15,ManagementSciences
+2023,Growth Manager,16,ManagementSciences
+2023,Content Strategist,17,MediaStudies
+2023,Chief of Staff,18,ManagementSciences
+2023,Investment Consultant,19,Commerce_FinanceAndAcounting
+2023,Digital Transformation Consultant,20,ComputerSciencesAndInformationTechnology
+2023,Listing Agent,21,Commerce_FinanceAndAcounting
+2023,Pen Tester,22,ComputerSciencesAndInformationTechnology
+2023,Customer Insights Analyst,23,ManagementSciences
+2023,Director of People and Culture,24,ManagementSciences
+2023,Director of Data Science,25,ComputerSciencesAndInformationTechnology
+2024,Mental Health Technician,1,SocialSciences
+2024,Loan Officer,2,Commerce_FinanceAndAcounting
+2024,Mental Health Therapist,3,SocialSciences
+2024,Electrical Engineer,4,Engineering
+2024,Construction Project Manager,5,ManagementSciences
+2024,Mechanical Engineer,6,Engineering
+2024,Psychiatrist,7,MedicalSciences
+2024,Human Resources Manager,8,ManagementSciences
+2024,Senior Accountant,9,Commerce_FinanceAndAcounting
+2024,Data Engineer,10,ComputerSciencesAndInformationTechnology
+2024,Civil Engineer,11,Engineering
+2024,Supply Chain Specialist,12,ManagementSciences
+2024,Accounting Manager,13,Commerce_FinanceAndAcounting
+2024,Attorney,14,ManagementSciences
+2024,Designer,15,ArtAndDesign
+2024,Controller,16,ManagementSciences
+2024,Behavioral Health Professional,17,SocialSciences
+2024,Psychiatric Nurse,18,MedicalSciences
+2024,Quality Engineer,29,Engineering
+2024,Senior Engineer,20,Engineering
+2024,Associate Attorney,21,SocialSciences
+2024,Real Estate Analyst,22,Commerce_FinanceAndAcounting
+2024,Psychiatric Mental  Health Nurse Practitioner,23,MedicalSciences
+2024,Tax Manager,24,Commerce_FinanceAndAcounting
+2024,Medical Director,25,MedicalSciences
+2018,Commercial Project Manager,1,ManagementSciences
+2018,Full-stack Developer,2,ComputerSciencesAndInformationTechnology
+2018,Computer Vision Engineer,3,ComputerSciencesAndInformationTechnology
+2018,Machine Learning Engineer,4,ComputerSciencesAndInformationTechnology
+2018,Preconstruction Manager,5,Engineering
+2018,Construction Superintendent,6,Engineering
+2018,Optometrist,7,BiologicalAndLifeSciences
+2018,Data Scientist,8,ComputerSciencesAndInformationTechnology
+2018,Chief Estimator,9,Engineering
+2018,Development Operations Engineer,10,ComputerSciencesAndInformationTechnology
+2018,Agile Coach,11,ManagementSciences
+2018,Construction Estimator,12,Engineering
+2018,Senior Talent Acquisition Manager,13,ManagementSciences
+2018,Plumbing Engineer,14,Engineering
+2018,Project Superintendent,15,Engineering
+2018,Staff Pharmacist,16,MedicalSciences
+2018,Head of Sales,17,Commerce_FinanceAndAcounting
+2018,Commercial Real Estate Agent,18,Commerce_FinanceAndAcounting
+2018,Construction Manager,19,ManagementSciences
+2018,Project Architect,20,ArtAndDesign
+2018,Product Owner,21,ComputerSciencesAndInformationTechnology
+2018,Senior Clinical Specialist,22,MedicalSciences
+2018,User Experience researcher,23,ComputerSciencesAndInformationTechnology
+2018,Registered Nurse,24,BiologicalAndLifeSciences
+2018,Partnership Manager,25,ManagementSciences 
+2017,Full-stack Developer,1,ComputerSciencesAndInformationTechnology
+2017,Data Scientist,2,ComputerSciencesAndInformationTechnology
+2017,Development Operations Engineer,3,ComputerSciencesAndInformationTechnology
+2017,Salesforce Administrator,4,ComputerSciencesAndInformationTechnology 
+2017,IT Engineer,5,ComputerSciencesAndInformationTechnology 
+2017,Salesforce Developer,6,ComputerSciencesAndInformationTechnology 
+2017,Quality Engineer,7,Engineering
+2017,Digital Project Manager,8,ComputerSciencesAndInformationTechnology
+2017,Cloud Engineer,9,ComputerSciencesAndInformationTechnology
+2017,Mgmt Consulting Analytics Manager,10,ManagementSciences
+2017,Project Architect,11,ArtAndDesign
+2017,Penetration Tester,12,ComputerSciencesAndInformationTechnology
+2017,Senior Audit Manager,13,Commerce_FinanceAndAcounting
+2017,Civil Engineer,14,Engineering
+2017,Intfrastructure Engineer,15,Engineering
+2017,Oracle HCM Manager,16,ManagementSciences
+2017,Machine Learning Engineer,17,ComputerSciencesAndInformationTechnology
+2017,Patient Experience Manager,18,ManagementSciences
+2017,Commercial Project Manager,19,ManagementSciences
+2017,Registered Nurse,20,MedicalSciences
+2017,Computer Vision Engineer,21,ComputerSciencesAndInformationTechnology
+2017,Revenue Manager,22,Commerce_FinanceAndAcounting
+2017,Operations Lead,23,ManagementSciences
+2017,Construction Superintendent,24,Engineering
+2017,Continuous Improvement Manager,25,ManagementSciences

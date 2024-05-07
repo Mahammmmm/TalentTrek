@@ -1,0 +1,115 @@
+.counselling_bg{
+    min-height: 90vh;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/counselling_bg1.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10%;
+}
+.content2 {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    width: 35%;
+    z-index: 1; /* Ensure content appears above the background */
+  }
+  
+  .content2 p {
+    text-align: center;
+  }
+  .content2 h1 {
+    text-align: center;
+    font-family: Hammersmith One;
+    color: rgb(5, 138, 118);
+  }
+
+
+
+
+
+
+.counselling_bg2{
+    min-height: 30vh;
+    margin-bottom: 10%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(250, 235, 215, 0.349);
+}
+.content3 {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .content3 p {
+text-align: center;
+  }
+  .content3 h1 {
+    font-family: Hammersmith One;
+  }
+
+
+
+
+
+.counselling_bg3{ 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Adjust as needed */
+}
+.counselor-card {
+    width: calc(35% - 100px); /* Adjust the width as needed */
+    height: auto;
+    margin-bottom: 5%; /* Adjust the margin as needed */
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+.counselor-card h3{
+    font-family: Hammersmith One;
+    text-align: center;
+    color: rgb(204, 128, 29);
+}
+.counselor-image {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.rating-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.rating-star  {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.rating-star img {
+    width: 25px;
+
+}
+.rating-star p {
+    margin-top: 40%;
+
+}
+.arrow-button {
+    padding: 5px 10px;
+    cursor: pointer;
+    background-image: url('../../assets/ArrowIcon.jpg');
+    background-size: 20px; 
+    background-repeat: no-repeat;
+    background-position: center;
+    float: right; 
+}
+
+.arrow-button span {
+    display: none;
+}
+
+

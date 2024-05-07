@@ -1,19 +1,4 @@
-/*const mongoose = require("mongoose");
-const userDetailsSchema = new mongoose.Schema({
-    name: String,
-      email: {type: String, unique:true},
-      password: String,
-      cPass: String,
-      age: String,
-      dateOfBirth: String,
-      contact: String,
-      city: String,
-},
-{
-collection:"User"}
-)
 
-mongoose.model("User",userDetailsSchema)*/
 
 const mongoose = require("mongoose");
 const userDetailsSchema = new mongoose.Schema({
@@ -42,7 +27,7 @@ const userDetailsSchema = new mongoose.Schema({
     ],
     disabilities: [
         {
-          type: String, // Assuming disability type can be one of these values
+          type: String, 
         },
     ],
     questionnaireResults: {

@@ -1,0 +1,76 @@
+.Counselor_Login{
+    min-height: 100vh;
+    /* background: linear-gradient(to top, #f8f9fa, rgb(175, 175, 144)); */
+  background: linear-gradient(to top, #708aa6b9, #22354ac7);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.Counselor_Login_Container{
+    display: flex;
+    height: 80vh;
+    width: 160vh;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.311);
+  
+}
+.Counselor_login_left-section{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid black;
+  }
+.Counselor_login_right-section {
+    background-color: #fff;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Counselor_imageGrad {
+    
+    width: 80%;
+    height: 80%;
+        
+}
+.Counselor_login-form {
+    max-width: 400px;
+    width: 100%;
+    padding: 50px;
+    background-color: #fff;
+  }
+  .Counselor_login-form h1{
+    color: black;
+    text-align: center;
+  }
+  .Counselor_login_form {
+    display: flex;
+    flex-direction: column;
+  }
+  label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    
+  }
+  
+  input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  
+  .Counselor_loginButton:hover {
+    background-color: rgb(57, 54, 54);
+  }
+  .Counselor_loginButton{
+    margin-left: 22%;
+    width: 200px;
+    margin-top: 3%;
+    background-color: black;
+    text-align: center;
+    justify-self: center;
+  }

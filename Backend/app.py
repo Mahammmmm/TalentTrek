@@ -4,6 +4,10 @@ from flask_pymongo import PyMongo
 import joblib
 import pandas as pd
 from bson.json_util import dumps
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
 
 
 app = Flask(__name__ )
@@ -228,6 +232,64 @@ def predict_career_universities():
     except Exception as e:
         return jsonify({'error': str(e)})
 
+
+
+
+# Load the dataset
+data = pd.read_csv("PreviousTrendingCareers.csv")  # Replace "PreviousTrendingCareers.csv" with the actual file path
+# Get unique career labels from the dataset
+unique_career_labels_before = data["career"].unique()
+
+# Generate career label mapping dynamically
+career_mapping = {career_label: idx + 1 for idx, career_label in enumerate(unique_career_labels_before)}
+
+# Replace non-numeric career labels with numeric labels using map
+data["career"] = data["career"].map(career_mapping)
+
+# Create features and target variable
+features = ["year"]
+target = "career"
+
+# Define preprocessing steps
+preprocessor = ColumnTransformer(
+    transformers=[
+        ('num', StandardScaler(), ['year']),  # Scale numerical features
+    ],
+    remainder='passthrough'  # Pass through any remaining columns
+)
+
+# Define the model
+model = RandomForestClassifier(random_state=42)
+
+# Create the pipeline
+pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('classifier', model)
+])
+
+# Fit the pipeline on the entire data
+pipeline.fit(data[features], data[target])
+
+@app.route('/predictTrends', methods=['POST'])
+def predictTrends():
+    #if request.method == 'GET':
+        # Get the input year from the request data
+        # input_data = request.get_json()
+        # year = input_data['year']
+        
+        # Make predictions for the input year
+        new_data = pd.DataFrame({"year": [2025]})
+        probabilities = pipeline.predict_proba(new_data)
+        
+        # Get the top 20 predicted careers
+        top_20_indices = probabilities.argsort()[0][-20:][::-1]
+        top_20_careers = [unique_career_labels_before[idx] for idx in top_20_indices]
+        
+        # Prepare the response
+        response = {
+            "predictions": top_20_careers
+        }
+        return jsonify(response)
 
 
 
