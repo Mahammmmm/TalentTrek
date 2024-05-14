@@ -1,0 +1,7 @@
+.call-button{
+    border-radius: 10px;
+    background-color: rgb(51, 51, 109);
+}
+.call-button:hover{
+    background-color: rgba(51, 51, 109, 0.55);
+}

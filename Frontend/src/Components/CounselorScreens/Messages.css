@@ -1,0 +1,97 @@
+
+.MainDivChat{
+    min-height:88vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.ChatsMainDiv{
+    display: flex;
+    height: 80vh;
+    width: 130vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.311), 0 0 20px rgba(139, 69, 19, 0.5);
+  
+}
+.ChatsDiv{
+    background-color: rgb(160, 160, 125);
+    border-right: 1px solid black;
+    flex: 1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.ChatsDivTop{
+    border-top-left-radius: 10px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10%;
+}
+.ChatsDivBottom{
+    color: white;
+    padding: 20px;
+    
+}
+.ChatDiv{
+    flex: 3;
+    border-radius: 10px;
+}
+.ChatDivTop{
+    border-top-right-radius: 10px;
+    background-color: rgb(160, 160, 125);
+    color: black;
+    display: flex;
+    height: 10%;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.ChatsDivBottom{
+    color: black;
+    padding: 20px;
+    overflow-y: auto; 
+    max-height: 100%;
+    
+}
+.UserNameChat{
+    margin-left: 10px;
+    margin-top: 3%;
+    font-weight: bold;
+}
+.user-item-chat {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-top: 12px;
+}
+/* .user-item-chat:last-child {
+    border-bottom: none; 
+} */
+.user-item-chat button{
+    background-color: rgba(254, 252, 248, 0);
+    color: black;
+}
+.user-list-chat {
+    padding: 10px 0px; 
+}
+.user-image-chat {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px;
+}
+.user-image-chats {
+    width: 30px; 
+    height: 30px; 
+    margin-left: 10px;
+}
+.sentt {
+    align-self: flex-end;
+    background-color: rgb(105, 105, 72);
+    color: white;
+    margin-right: 8px;
+  }

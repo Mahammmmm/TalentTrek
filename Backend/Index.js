@@ -39,6 +39,7 @@ require("./Universities")
 require("./Resume")
 require("./Questions")
 require("./Counsellors")
+require("./BookingSchema")
 
 const User = mongoose.model("User");
 const Feedback = mongoose.model("Feedback");
@@ -47,6 +48,7 @@ const Universities = mongoose.model("Universities");
 const Resume = mongoose.model("Resume");
 const Questions = mongoose.model("Chatboard");
 const Counsellors = mongoose.model("Counsellors");
+const Booking = mongoose.model("Booking")
 //API Calls
 
 
@@ -156,7 +158,7 @@ app.post("/userData", async (req, res) => {
         }
         return res;
       });
-      console.log(user);
+      // console.log(user);
       if (user == "token expired") {
         return res.send({ status: "error", data: "token expired" });
       }
@@ -739,7 +741,7 @@ app.post("/CounselorsData", async (req, res) => {
       }
       return decoded;
     });
-    console.log(user);
+    // console.log(user);
     if (user.error === "token expired") {
       return res.status(401).json({ status: "error", data: "token expired" }); // Send 401 Unauthorized status
     }
@@ -781,6 +783,127 @@ app.post("/updateCounselor", async(req,res) => {
       return res.json({status: "error", data:error})
   }
 });
+
+
+
+
+
+
+// API route for booking submission
+app.post('/bookings', async (req, res) => {
+  try {
+      const { counselorId, userId, appointmentDate, timeSlot } = req.body;
+
+      const booking = new Booking({
+          counselor: counselorId,
+          user: userId,
+          appointmentDate: {
+              date: appointmentDate,
+              timeSlot: timeSlot
+          },
+          status: "pending"
+      });
+      await booking.save();
+      res.status(201).json({ message: "Booking created successfully", booking: booking });
+  } catch (error) {
+      console.error('Error creating booking:', error);
+      res.status(500).json({ error: 'Internal server error' });
+  }
+});
+
+
+
+
+
+//API to get booking details
+app.get('/getbookings', async (req, res) => {
+  const userId = req.query.userId;
+  try {
+      // Fetch bookings based on the user ID
+      const bookings = await Booking.find({ user: userId }).populate('counselor').exec();
+      res.status(200).json(bookings);
+  } catch (error) {
+      console.error('Error fetching user bookings:', error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+//API to get booking details
+app.get('/getUserbookings', async (req, res) => {
+  const counselorId = req.query.counselorId;
+  try {
+      // Fetch bookings based on the user ID
+      const bookings = await Booking.find({ counselor: counselorId }).populate('user').exec();
+      res.status(200).json(bookings);
+  } catch (error) {
+      console.error('Error fetching user bookings:', error);
+      res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+
+
+//update booking status api call
+app.post("/updateBooking", async(req,res) => {
+     
+  const {id , request, day} = req.body;
+  try {
+    const booking = await Booking.findById(id);
+    if (!booking) {
+        return res.status(404).json({ status: "error", message: "Booking not found" });
+    }
+    booking.status = request;
+    await booking.save();
+
+    if (request === "approved") {
+        const counselor = await Counsellors.findById(booking.counselor);
+        if (!counselor) {
+            return res.status(404).json({ status: "error", message: "Counselor not found" });
+        }
+        const bookingTimeSlot = booking.appointmentDate[0].timeSlot;
+        const timeSlotIndex = counselor.availability.findIndex(dayAvailability => dayAvailability.day === day);
+        if (timeSlotIndex !== -1) {
+            const timeSlot = counselor.availability[timeSlotIndex].time_slots.find(slot => slot.time === bookingTimeSlot);
+            if (timeSlot) {
+                timeSlot.available = "no";
+                await counselor.save();
+            }
+        }
+    }
+
+    return res.json({ status: "ok", data: "updated" });
+    } catch (error) {
+        console.error('Error updating booking status:', error);
+        return res.status(500).json({ status: "error", message: "Internal server error" });
+    }
+});
+
+app.post("/updateAvailability", async (req, res) => {
+  const { counselorId, day, time_Slot } = req.body;
+  try{
+      const counselor = await Counsellors.findById({_id:counselorId})
+        if (!counselor) {
+            return res.status(404).json({ status: "error", message: "Counselor not found" });
+        }
+        const timeSlotIndex = counselor.availability.findIndex(dayAvailability => dayAvailability.day === day);
+        
+        if (timeSlotIndex !== -1) {
+            const timeSlot = counselor.availability[timeSlotIndex].time_slots.find(slot => slot.time === time_Slot);
+            if (timeSlot) {
+                timeSlot.available = "yes";
+                await counselor.save();
+            }
+        }
+        
+        return res.json({status: "ok", data:"updated"});
+
+        }catch(error){
+            return res.json({status: "error", data:error})
+        }
+});
+
 
 //server
 app.listen(3002,()=>{

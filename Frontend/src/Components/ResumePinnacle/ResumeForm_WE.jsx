@@ -83,7 +83,9 @@ const WorkExperience = () => {
       {/* Left Section */}
       <div className="left-section">
         <div className="left-header">
-          <h1>TalentTrek</h1>
+        <a href='/' className='logo'>
+            Talent<span className='brown'>Trek</span>
+          </a>
         </div>
         <div className="status-bar">
           <ul>

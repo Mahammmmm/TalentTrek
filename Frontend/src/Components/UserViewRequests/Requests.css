@@ -1,0 +1,32 @@
+.booking-heading {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    color: rgb(76, 76, 123);
+    border-bottom: 2px solid black;
+}
+
+.booking-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    color: rgb(78, 77, 77);
+    margin-top: 15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.user-booking-list {
+    margin-top: 100px;
+}
+
+.pending-status {
+    color: rgb(196, 152, 69); /* Change color for pending status */
+}
+
+.approved-status {
+    color: green; /* Change color for approved status */
+}
+
+.cancelled-status {
+    color: red; /* Change color for cancelled status */
+}

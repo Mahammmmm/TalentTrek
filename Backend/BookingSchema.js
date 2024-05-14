@@ -11,9 +11,20 @@ const bookingSchema = new mongoose.Schema({
       required: true,
     },
     appointmentDate: {
-      type: Date,
+      type: [
+          {
+              date: {
+                  type: Date,
+                  required: true,
+              },
+              timeSlot: {
+                  type: String,
+                  required: true,
+              }
+          }
+      ],
       required: true,
-    },
+  },
     status: {
       type: String,
       enum: ["pending", "approved", "cancelled"],

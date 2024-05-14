@@ -1,0 +1,25 @@
+.counselorEneterId{
+    font-family: Goblin One;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 190px;
+}
+.counselorEneterIdDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.counselorEneterIdInput{
+    width: 30%;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+.startcall_button{
+    background-color: black;
+    border-radius: 10px;
+    margin-top: -8px;
+}
+.startcall_button:hover{
+    background-color: rgba(0, 0, 0, 0.568);
+}

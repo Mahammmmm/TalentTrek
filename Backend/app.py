@@ -255,12 +255,12 @@ preprocessor = ColumnTransformer(
 )
 
 # Define the model
-model = RandomForestClassifier(random_state=42)
+model2 = RandomForestClassifier(random_state=42)
 
 # Create the pipeline
 pipeline = Pipeline([
     ('preprocessor', preprocessor),
-    ('classifier', model)
+    ('classifier', model2)
 ])
 
 # Fit the pipeline on the training data

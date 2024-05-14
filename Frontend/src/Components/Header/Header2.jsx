@@ -3,12 +3,13 @@ import "./Header2.css"
 import { header2_background,careeer,careeer1,user,CareerBG3,unibg,resumebg3,Ellipse14,BooksImage1,counselling_bg1} from '../../assets/index-assets'
 import { Link } from 'react-router-dom';
 import Footer from "../Footer/Footer";
-
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from '../../lib/firebase';
 
 const Header = () => {
 
 
-
+  const [userDataFetched,setUserDataFetched]=useState(false);
   const [userData, setUserData] = useState("");
 
   useEffect(() => {
@@ -31,10 +32,38 @@ const Header = () => {
       .then((data=>{
         //console.log(data,"userData");
         setUserData(data.data);
+        setUserDataFetched(true)
+        
       }));
     }
     
   });
+
+  useEffect(() => {
+    if (userDataFetched) {
+      // Register user into Firebase
+      console.log(userData._id)
+      Handle(userData);
+    }
+  }, [userDataFetched, userData._id]);
+
+
+  const Handle = async (userData) => {
+    try {
+      await setDoc(doc(db, "users", userData._id), {
+ 
+        name: userData.name ? userData.name : '',
+        email: userData.email ? userData.email : '',
+        password: userData.password ? userData.password : '',
+        userId: userData._id ? userData._id : userData._id ? userData._id : ''
+      });
+      console.log("Document added successfully");
+    } catch (err) {
+      console.error("Error adding document: ", err);
+    }
+  }
+
+  
 
 
 
@@ -73,49 +102,51 @@ const Header = () => {
 
   return (
     <div>
-      <header className='header2'>
-      <nav >
-          <div className='nav_first'>
-            <a href='#' className='logo'>
-              Talent<span className='brown'>Trek</span>
-            </a>
-
-            <div class="image-and-text-container">
-              {userData.image ? (
-                <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_H2'></img></Link>
-              ) : (
-                <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_H2'></img></Link>
-              )}
-              <p className='welcome'>{userData ? userData.name : "Guest"}{' '} </p>
+      <header>
+        <nav className='nav_first'>
+            <div>
+                <a href='/' className='logo2'>
+                    Talent<span className='brown2'>Trek</span>
+                </a>
             </div>
-          </div>
-
-
-          {/* <div>
+            { <div>
           <ul>
           <li>
-            <a href='#' className="noUnderline"><Link to="/jobs">Jobs</Link></a>
+            <Link to="/userMessages" className="noUnderline">Messages</Link>
           </li>
 
           <li>
-            <a href='#' className="noUnderline"><Link to="/institutes">Institutes</Link></a>
+            <Link to="/q1" className="noUnderline">Career Test</Link>
           </li>
 
           <li>
-            <a href='#' className="noUnderline"><Link to="/resume">Resume Builder</Link></a>
+            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
           </li>
 
           <li>
-            <a href='#' className="noUnderline"><Link to="/career">Career Identification</Link></a>
+            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
           </li>
           <li>
-            
+            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
           </li>
 
           </ul>
-          </div> */}
+          </div> }
+            <div>
+              <div class="image-and-text-container2">
+                <p className='welcome_uni'>{userData.name}{' '} </p>
+                {userData.image ? (
+                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
+                ) : (
+                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
+                )}
+              </div>
+              
+            </div> 
+            
         </nav>
-      </header>
+
+        </header>
 
 
 

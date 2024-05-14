@@ -83,7 +83,9 @@ class Feedback extends Component {
 
     render(){
       
-
+      const requests = () => {
+        window.location.href = "./Requests";
+      }
       const logOut = () => {
         window.localStorage.clear();
         window.location.href = "./login";
@@ -111,6 +113,10 @@ class Feedback extends Component {
                     <a href="#feedback" className='user_boldness'>Feedback/Complaint</a>
                     <br />
                     <a href="#chatboard" className='user_menu' onClick={chatboard}>Chatboard</a>
+                    <br />
+                    <a href="#requests" className="user_menu" onClick={requests}>
+                      View Requests
+                    </a>
                     <br />
                     <a href="#logout" className='user_menu' onClick={logOut}>Logout</a>
                   </div>

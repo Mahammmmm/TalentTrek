@@ -17,6 +17,7 @@ const Counselling = () => {
     const [availableTimeSlots, setAvailableTimeSlots] = useState([]);
     const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
     const [selectedDay,setselectedDay]=useState("")
+    const [bookingSuccess, setBookingSuccess] = useState(false);
 
     useEffect(() => {
       const token = window.localStorage.getItem("token");
@@ -101,67 +102,93 @@ const Counselling = () => {
         setselectedDay(date.toLocaleDateString('en-US', { weekday: 'long' }));
     };
     
-    // // Function to handle time slot selection
-    // const handleTimeSlotSelection = (timeSlot) => {
-    //     setSelectedTimeSlot(timeSlot);
-    // };
-
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Name:', userData.name);
-        console.log('Email:', userData.email);
-        console.log('Selected Date:', selectedDate);
-        console.log('Selected Time Slot:', selectedTimeSlot);
+        const token = window.localStorage.getItem("token");
+        if (!token) {
+            console.error('User not authenticated');
+            return;
+        }
+        fetch('http://localhost:3002/bookings', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({
+                counselorId: counselor._id,
+                userId: userData._id,
+                appointmentDate: selectedDate,
+                timeSlot: selectedTimeSlot
+            })
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Failed to submit booking');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log('Booking submitted successfully:', data.booking);
+            setBookingSuccess(true);
+        })
+        .catch(error => {
+            console.error('Error submitting booking:', error);
+        });
     };
+
+    
     if (!counselor) {
         return null; // Render nothing until the counselor data is fetched
     }
 
     return(
         <div>
-            <header className='header2'>
-                <nav >
-                    <div className='nav_first'>
-                        <a href='#' className='logo'>
-                        Talent<span className='brown'>Trek</span>
-                        </a>
+            <header>
+        <nav className='nav_first'>
+            <div>
+                <a href='/' className='logo2'>
+                    Talent<span className='brown2'>Trek</span>
+                </a>
+            </div>
+            { <div>
+          <ul>
+          <li>
+            <Link to="/userMessages" className="noUnderline">Messages</Link>
+          </li>
 
-                        <div class="image-and-text-container">
-                        {userData.image ? (
-                            <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_H2'></img></Link>
-                        ) : (
-                            <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_H2'></img></Link>
-                        )}
-                        <p className='welcome'>{userData ? userData.name : "Guest"}{' '} </p>
-                        </div>
-                    </div>
+          <li>
+            <Link to="/q1" className="noUnderline">Career Test</Link>
+          </li>
 
+          <li>
+            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
+          </li>
 
-                    {/* <div>
-                    <ul>
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/jobs">Jobs</Link></a>
-                    </li>
+          <li>
+            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
+          </li>
+          <li>
+            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
+          </li>
 
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/institutes">Institutes</Link></a>
-                    </li>
+          </ul>
+          </div> }
+            <div>
+              <div class="image-and-text-container2">
+                <p className='welcome_uni'>{userData.name}{' '} </p>
+                {userData.image ? (
+                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
+                ) : (
+                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
+                )}
+              </div>
+              
+            </div> 
+            
+        </nav>
 
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/resume">Resume Builder</Link></a>
-                    </li>
-
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/career">Career Identification</Link></a>
-                    </li>
-                    <li>
-                        
-                    </li>
-
-                    </ul>
-                    </div> */}
-                    </nav>
-                </header>
+        </header>
 
 
 
@@ -243,6 +270,9 @@ const Counselling = () => {
                             <br />
                             <button className="sessionButton" type="submit">Request Session</button>
                         </form>
+                        <br />
+                        
+                        {bookingSuccess && <p style={{marginLeft:'25%',fontWeight:'bold'}}>Request sent successfully!</p>}
                     </div>
 
                 </div>

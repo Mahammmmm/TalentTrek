@@ -46,9 +46,9 @@ body, html {
   }
  .user-list {
   height: 100%;
-  width: 200px;
+  width: 210px;
   left: 0;
-  top: 120px;
+  top: 110px;
   padding-top: 100px;
   }
   .user-list a{

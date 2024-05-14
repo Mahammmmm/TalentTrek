@@ -1,4 +1,22 @@
 import React from 'react'
+
+//import firebase from '../firebase.js'
+
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAJef0lonr2ZRzGEFnUGUiTDuLbjdWTfIU",
+//   authDomain: "chatapp-tt.firebaseapp.com",
+//   projectId: "chatapp-tt",
+//   storageBucket: "chatapp-tt.appspot.com",
+//   messagingSenderId: "824579346827",
+//   appId: "1:824579346827:web:b192b14a1e7f75d8c79f8e",
+//   measurementId: "G-HLMGD0YM4T"
+// };
+
+// initializeApp(firebaseConfig);
+
+
+
 import { Router, Routes, Route } from 'react-router-dom';
 import Login from "./Components/LoginPage/LoginPage.jsx"
 import Signup from "./Components/SignUpPage/SignUpPage.jsx"
@@ -66,10 +84,14 @@ import CounselorHome from "./Components/CounselorScreens/HomePage.jsx"
 import CounselorLogin from "./Components/CounselorScreens/Login.jsx"
 import Schedule from './Components/CounselorScreens/Schedule.jsx'
 import Messages from './Components/CounselorScreens/Messages.jsx'
+import UserMessages from './Components/UserMessages/userMessages.jsx'
 import Profile from './Components/CounselorScreens/Profile.jsx'
 import EditProfile from "./Components/CounselorScreens/EditProfile.jsx"
-// import BookCounselor from "./Components/Counselling/BookCounselor.jsx"
-
+import BookCounselor from "./Components/Counselling/BookCounselor.jsx"
+import EnterId from "./Components/CounselorScreens/EnterIdPage.jsx"
+import Video from "./Components/CounselorScreens/VideoPage.jsx"
+import Requests from "./Components/UserViewRequests/Requests.jsx"
+import CouselorRequests from "./Components/CounselorScreens/Requests.jsx"
 
 const App = () => {
 
@@ -100,7 +122,7 @@ const CounselorloggedIn=window.localStorage.getItem("CounselorloggedIn");
         <Route path="forgetpassword" element={<ForgetPassword />}/>
         <Route path="resumetemplates" element={<ResumeTemplates/>}/>
         <Route path="resumetemplates2" element={<ResumeTemplates2/>}/>
-        
+        <Route path="UserMessages" element={<UserMessages />} />
         <Route path="resumeform" element={<ResumeForm/>}/>
         <Route path="ResumeFormWorkExp" element={<ResumeFormWorkExp/>}/>
         <Route path="ResumeFormWorkExp2" element={<ResumeFormWorkExp2/>}/>
@@ -155,7 +177,11 @@ const CounselorloggedIn=window.localStorage.getItem("CounselorloggedIn");
         <Route path="PredictedCareers2/:studyArea" element={<PredictedCareers2 />} />
         <Route path="PredictedInstitutes/:careerName" element={<PredictedInstitutes />} />
         <Route path="PredictedInstitutes2/:careerName" element={<PredictedInstitutes2 />} />
-        {/* <Route path="BookCounselor/:counseloremail" element={<BookCounselor/>}/> */}
+        <Route path="BookCounselor/:counseloremail" element={<BookCounselor/>}/>
+        <Route path="EnterId" element={<EnterId/>}/>
+        <Route path="Video/:id" element={<Video/>}/>
+        <Route path="Requests" element={<Requests/>}/>
+        <Route path="CouselorRequests" element={<CouselorRequests/>}/>
       </Routes>
     
   );

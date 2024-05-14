@@ -46,6 +46,9 @@ const  App = () => {
   const chatboard = () => {
     window.location.href = "./Chatboard";
   }
+  const requests = () => {
+    window.location.href = "./Requests";
+  }
 
 
 
@@ -101,6 +104,10 @@ const  App = () => {
               <br />
               <a href="#chatboard" className="user_menu" onClick={chatboard}>
                 Chatboard
+              </a>
+              <br />
+              <a href="#requests" className="user_menu" onClick={requests}>
+                View Requests
               </a>
               <br />
               <a href="#logout" className="user_menu" onClick={logOut}>

@@ -4,10 +4,12 @@ import {profile,text,calender,counseling} from '../../assets/index-assets'
 import Footer from "../Footer/Footer";
 import Navbar from "./Navbar"
 import { Link } from 'react-router-dom';
-
+import { doc, setDoc } from "firebase/firestore"; 
+import { db } from '../../lib/firebase';
 
 const Home = ()=> {
     const [counselor, setCounselor] = useState("");
+    const [userDataFetched,setUserDataFetched]=useState(false);
 
     useEffect(() => {
         const token = window.localStorage.getItem("Counselortoken");
@@ -29,10 +31,38 @@ const Home = ()=> {
           .then((data=>{
             //console.log(data,"userData");
             setCounselor(data.data);
+            setUserDataFetched(true)
           }));
         }
         
       });
+
+
+      useEffect(() => {
+        if (userDataFetched) {
+          // Register user into Firebase
+          console.log(counselor._id)
+          Handle(counselor);
+        }
+      }, [userDataFetched, counselor._id]);
+    
+    
+      const Handle = async (counselor) => {
+        try {
+          await setDoc(doc(db, "counselors", counselor._id), {
+     
+            name: counselor.name ? counselor.name : '',
+            email: counselor.email ? counselor.email : '',
+            password: counselor.password ? counselor.password : '',
+            counselorId: counselor._id ? counselor._id : counselor._id ? counselor._id : ''
+          });
+          console.log("Document added successfully");
+        } catch (err) {
+          console.error("Error adding document: ", err);
+        }
+      }
+
+
     return (
         <div >
             <nav className="CounselorNav_nav">
@@ -40,6 +70,9 @@ const Home = ()=> {
                 <ul>
                     <li >
                         <Link to='/Messages'><a> Messages</a></Link>
+                    </li>
+                    <li>
+                    <Link to='/CouselorRequests'><a> Requests</a></Link>
                     </li>
                     <li>
                     <Link to='/Schedule'><a> Schedule</a></Link>

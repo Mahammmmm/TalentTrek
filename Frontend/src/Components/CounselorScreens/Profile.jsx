@@ -6,6 +6,7 @@ export default function Profile() {
 
     const navigate = useNavigate();
     const [counselor, setCounselor] = useState("");
+    
 
     useEffect(() => {
         const token = window.localStorage.getItem("Counselortoken");
@@ -25,7 +26,7 @@ export default function Profile() {
           })
           .then((res)=>res.json())
           .then((data=>{
-            console.log(data,"userData");
+            console.log(data,"counselorData");
             setCounselor(data.data);
           }));
         }
@@ -46,10 +47,13 @@ export default function Profile() {
                         <Link to='/Messages'><a> Messages</a></Link>
                     </li>
                     <li>
+                    <Link to='/CouselorRequests'><a> Requests</a></Link>
+                    </li>
+                    <li>
                     <Link to='/Schedule'><a> Schedule</a></Link>
                     </li>
                     <li>
-                    <Link to='/Profile'><a> Profile</a></Link>
+                    <Link to='/Profile'><a style={{fontWeight:'bold'}}> Profile</a></Link>
                     </li>
                     <li>
                     <Link><a onClick={logOut}> Logout</a></Link>

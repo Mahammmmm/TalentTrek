@@ -30,7 +30,7 @@ const Questionnaire = () => {
     <div>
         <nav className='navbar3'>
             <div>
-                <a href='#' className='logo3'>
+                <a href='/' className='logo3'>
                     Talent<span className='brown2'>Trek</span>
                 </a>
             </div>

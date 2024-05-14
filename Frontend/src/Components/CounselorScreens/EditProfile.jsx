@@ -100,6 +100,9 @@ const logOut = () => {
                         <Link to='/Messages'><a> Messages</a></Link>
                     </li>
                     <li>
+                    <Link to='/CouselorRequests'><a> Requests</a></Link>
+                    </li>
+                    <li>
                     <Link to='/Schedule'><a> Schedule</a></Link>
                     </li>
                     <li>

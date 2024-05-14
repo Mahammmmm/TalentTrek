@@ -50,23 +50,51 @@ const Questionnaire = () => {
 
   return (
     <div>
-        <nav className='navbar2'>
+        <header>
+        <nav className='nav_first'>
             <div>
-                <a href='#' className='logo2'>
+                <a href='/' className='logo2'>
                     Talent<span className='brown2'>Trek</span>
                 </a>
             </div>
+            { <div>
+          <ul>
+          <li>
+            <Link to="/Messages" className="noUnderline">Messages</Link>
+          </li>
+
+          <li>
+            <Link to="/q1" className="noUnderline">Career Test</Link>
+          </li>
+
+          <li>
+            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
+          </li>
+
+          <li>
+            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
+          </li>
+          <li>
+            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
+          </li>
+
+          </ul>
+          </div> }
             <div>
-                <div class="image-and-text-container2">
-                    <p className='welcome_uni'>{userData.name}{' '} </p>
-                    {userData.image ? (
-                    <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
-                    ) : (
-                    <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
-                    )}
-                </div>
+              <div class="image-and-text-container2">
+                <p className='welcome_uni'>{userData.name}{' '} </p>
+                {userData.image ? (
+                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
+                ) : (
+                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
+                )}
+              </div>
+              
             </div> 
+            
         </nav>
+
+        </header>
 
 
 

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import './ChatBoard.css';
+import './Chatboard.css';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
@@ -247,6 +247,9 @@ const App = () => {
   const profile = () => {
     navigate("/userprofile");
   };
+  const requests = () => {
+    window.location.href = "./Requests";
+  }
 
   return (
     <div className="user-app-container_chat">
@@ -272,6 +275,10 @@ const App = () => {
             Chatboard
           </a>
           <br />
+          <a href="#requests" className="user_menu" onClick={requests}>
+                View Requests
+              </a>
+              <br />
           <a href="#logout" className="user_menu" onClick={logOut}>
             Logout
           </a>

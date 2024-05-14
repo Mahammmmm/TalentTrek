@@ -1,0 +1,101 @@
+.User_MainDivChat{
+    min-height:86vh;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.User_ChatsMainDiv{
+    display: flex;
+    height: 75vh;
+    width: 130vh;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.311), 0 0 20px rgba(139, 69, 19, 0.5);
+}
+.User_ChatsDiv{
+    background-color: rgba(176, 126, 60, 0.639);
+    border-right: 1px solid black;
+    flex: 1;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.User_ChatDivTop{
+    border-top-right-radius: 10px;
+    background-color: rgba(176, 126, 60, 0.639);
+    color: black;
+    display: flex;
+    height: 10%;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+.user-item-chat-user {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-top: 12px;
+}
+.user-item-chat-user:last-child {
+    border-bottom: none; 
+}
+.user-item-chat-user button{
+    background-color: rgba(176, 126, 60, 0);
+    color: black;
+}
+.ChatDivBottom {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+  }
+  
+  .message-container-userchat {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .input-container-userchat {
+    margin-top: 10px;
+    /* position: fixed;
+    bottom: 25px; */
+    display: flex;
+    flex-direction: row;
+    /* width: 50%; */
+  }
+  .input-container-userchat input{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .input-container-userchat button{
+    margin-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    background-color: black;
+    /* background-color: rgb(122, 80, 25); */
+  }
+  .message {
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  
+  .sent {
+    align-self: flex-end;
+    background-color: rgb(149, 102, 40);
+    color: white;
+    margin-right: 8px;
+  }
+  
+  .received {
+    align-self: flex-start;
+    background-color: rgb(228, 228, 228);
+    color: black;
+    margin-left: 8px;
+  }
+  .user-image-chat-user {
+    width: 30px; 
+    height: 30px; 
+    margin-right: 10px; 
+}

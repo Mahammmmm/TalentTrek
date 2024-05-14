@@ -55,59 +55,58 @@ const Trends = () =>{
 
     return(
         <div>
-            <header className='header2'>
-                <nav >
-                    <div className='nav_first'>
-                        <a href='#' className='logo'>
-                        Talent<span className='brown'>Trek</span>
-                        </a>
+            <header>
+        <nav className='nav_first'>
+            <div>
+                <a href='/' className='logo2'>
+                    Talent<span className='brown2'>Trek</span>
+                </a>
+            </div>
+            { <div>
+          <ul>
+          <li>
+            <Link to="/Messages" className="noUnderline">Messages</Link>
+          </li>
 
-                        <div class="image-and-text-container">
-                        {userData.image ? (
-                            <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_H2'></img></Link>
-                        ) : (
-                            <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_H2'></img></Link>
-                        )}
-                        <p className='welcome'>{userData ? userData.name : "Guest"}{' '} </p>
-                        </div>
-                    </div>
+          <li>
+            <Link to="/q1" className="noUnderline">Career Test</Link>
+          </li>
 
+          <li>
+            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
+          </li>
 
-                    {/* <div>
-                    <ul>
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/jobs">Jobs</Link></a>
-                    </li>
+          <li>
+            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
+          </li>
+          <li>
+            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
+          </li>
 
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/institutes">Institutes</Link></a>
-                    </li>
+          </ul>
+          </div> }
+            <div>
+              <div class="image-and-text-container2">
+                <p className='welcome_uni'>{userData.name}{' '} </p>
+                {userData.image ? (
+                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
+                ) : (
+                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
+                )}
+              </div>
+              
+            </div> 
+            
+        </nav>
 
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/resume">Resume Builder</Link></a>
-                    </li>
-
-                    <li>
-                        <a href='#' className="noUnderline"><Link to="/career">Career Identification</Link></a>
-                    </li>
-                    <li>
-                        
-                    </li>
-
-                    </ul>
-                    </div> */}
-                    </nav>
-                </header>
+        </header>
 
 
 
 
 
                 <section id="Trends" className='trendsbg'>
-                    {/* <div class="trendscontent">
-                        <h1>Future-Proof Your Career!</h1>
-                        <p>Empowering you with insights into the future job market, our platform forecasts the top career trends for the upcoming years, helping you stay ahead and make informed decisions about your professional journey</p>
-                    </div> */}
+                    
                 </section>
 
 
