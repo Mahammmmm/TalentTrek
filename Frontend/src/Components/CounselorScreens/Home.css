@@ -37,7 +37,7 @@
     position: relative; /* Add relative positioning */
 }
 
-/* Add this style for the vertical line */
+
 .CounsellorHome_main2::before {
     content: '';
     position: absolute;
@@ -165,63 +165,238 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-*{
-    box-sizing:border-box
-}
-
-body{
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
     margin: 0;
-}
-
-.CounselorNav_nav{
-    background-color:#333;
-    color:white;
+  }
+  
+  .CounselorNav_nav {
+    background-color: #333;
+    color: white;
     justify-content: space-between;
     align-items: center;
-    gap: 20rem;
     padding: 0 1rem;
     display: flex;
     flex-direction: row;
-}
-.CounselorNav_site-title{
+    position: relative;
+  }
+  
+  .CounselorNav_site-title {
     font-size: 2rem;
-}
-.CounselorNav_nav ul{
-    padding: 1;
-    margin: 2;
+  }
+  
+  .CounselorNav_nav-menu {
+    padding: 0;
+    margin: 0;
     list-style: none;
     display: flex;
     gap: 1rem;
-}
-.CounselorNav_nav a{
-    color:inherit;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .CounselorNav_nav-menu li {
+    padding: 1rem;
+  }
+  
+  .CounselorNav_nav a {
+    color: inherit;
     height: 100%;
     display: flex;
-    align-items: stretch;
-    padding: .25rem;
+    align-items: center;
+    padding: 0.25rem;
     text-decoration: none;
-
-}
-.CounselorNav_nav li.active{
+  }
+  
+  .CounselorNav_nav li.active {
     background-color: #555;
-
-}
-.CounselorNav_nav li:hover{
+  }
+  
+  .CounselorNav_nav li:hover {
     background-color: #777;
-    
+  }
+  
+  .CounselorNav_hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 2rem;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .CounselorNav_nav {
+      flex-direction: row;
+    }
+    .CounselorNav_site-title {
+        font-size: 2rem;
+        margin-left: -300px;
+      }
+      
+    .CounselorNav_nav-menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 200px;
+      background-color: black;
+      flex-direction: column;
+      transform: translateX(100%);
+      z-index: 10;
+      transition: transform 0.3s ease-in-out;
+      color: white; 
+      font-weight: bold;
+      display: none;
+    }
+  
+    .CounselorNav_nav-menu.active {
+      transform: translateX(0);
+    }
+  
+    .CounselorNav_nav-menu li {
+      width: 100%;
+      text-align: center;
+      padding: 20px 0;
+      border-bottom: 1px solid #444;
+      background-color: black;
+    }
+  
+    .CounselorNav_hamburger {
+      display:block;
+      
+      
+    }
+  
+    /* .CounselorNav_hamburger {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    } */
+  }
+  
+  /* Further responsive adjustments for screens down to 530px */
+  @media (max-width: 530px) {
+    .CounselorNav_site-title {
+      font-size: 1.5rem;
+    }
+  
+    .CounselorNav_nav-menu {
+      width: 100%; /* Full screen width for smaller screens */
+    }
+  
+    .CounselorNav_nav-menu li {
+      padding: 15px 0;
+    }
+  }
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .CounsellorHome_main {
+        flex-direction: column; 
+        text-align: center; 
+    }
+    .CounsellorHome_main2 {
+        
+        flex-direction: column;
+    }
+    .CounsellorHome_small-box-container {
+        justify-content: center; /* Center items */
+    }
+    .CounsellorHome_paragraph {
+        margin-left: 50px;
+    }
+    .CounsellorHome_main2::before {
+        top: 30px;
+        height: 5rem;
+    }
+    .CounsellorHome_links{
+        font-size: 1rem;
+    }
+    .CounsellorHome_small-box1 {
+        margin-left: 0%;
+        text-align: center; 
+    }
+    .CounsellorHome_small-box2 {
+        margin-left: 22%;
+        text-align: center;
+    }
+    .CounsellorHome_small-box3 {
+        margin-left: 23%;
+        text-align: center;
+    }
 }
-.CounselorNav_trek{
-    color: bisque;
+
+@media (max-width: 768px) {
+    .CounsellorHome_mission {
+        font-size: 30px; /* Adjust font size */
+    }
+    .CounsellorHome_about {
+        font-size: 18px; /* Adjust font size */
+    }
+    .CounsellorHome_paragraph {
+        font-size: 16px; /* Adjust font size */
+    }
+    .CounsellorHome_heading {
+        font-size: 20px; /* Adjust font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .CounsellorHome_main {
+        flex-direction: column; 
+    }
+    .CounsellorHome_image-container, .CounsellorHome_text-container {
+        flex: none;
+        width: 100%;
+        text-align: center; 
+    }
+    .CounsellorHome_main2 {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .CounsellorHome_main2::before {
+        width: 1.5%;
+        height: 60%;
+        top: 25%; 
+        left: 0; 
+    }
+    .CounsellorHome_circle-container {
+        flex-direction: column;
+        align-items: center; 
+        padding: 0; 
+    }
+    .CounsellorHome_circle1, .CounsellorHome_circle2, .CounsellorHome_circle3 {
+        margin-bottom: 50px; 
+    }
+    .CounsellorHome_small-box-container {
+        
+        flex-direction: column; 
+        align-items: center; 
+    }
+    .CounsellorHome_small-box1 {
+        margin-left: 0; 
+        margin-bottom: 150px; 
+    }
+    .CounsellorHome_small-box2{
+        margin-left: 0; 
+        margin-bottom: 150px; 
+    }
+    .CounsellorHome_small-box3 {
+        margin-left: 0; 
+        margin-bottom:0px; 
+    }
 }

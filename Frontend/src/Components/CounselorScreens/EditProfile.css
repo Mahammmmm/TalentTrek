@@ -59,3 +59,46 @@
 .CounslerProfile_submit :hover{
     background-color: black;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .CounslerProfile_big-box {
+        width: 90%; /* Adjust width for smaller screens */
+        height: auto; /* Let the height adjust based on content */
+        padding: 20px; /* Add some padding for smaller screens */
+    }
+    .CounslerProfile_name {
+        font-size: large; /* Adjust font size for smaller screens */
+    }
+    .CounslerProfile_label {
+        width: 120px; /* Adjust label width for smaller screens */
+    }
+    .CounslerProfile_value {
+        width: 100%; /* Make the input fields take full width */
+    }
+    .CounslerProfile_row select {
+        width: 100%; /* Make select fields take full width */
+    }
+}
+
+@media (max-width: 480px) {
+    .CounslerProfile_big-box {
+        width: 100%; /* Adjust width for very small screens */
+        height: auto; /* Let the height adjust based on content */
+        padding: 15px; /* Add some padding for very small screens */
+    }
+    .CounslerProfile_name {
+        font-size: medium; /* Adjust font size for very small screens */
+    }
+    .CounslerProfile_label {
+        width: 100px; /* Adjust label width for very small screens */
+        margin-left: 10px; /* Adjust margin for very small screens */
+    }
+    .CounslerProfile_value {
+        width: 100%; /* Make the input fields take full width */
+        margin-right: 0; /* Remove right margin */
+    }
+    .CounslerProfile_row select {
+        width: 100%; /* Make select fields take full width */
+    }
+}

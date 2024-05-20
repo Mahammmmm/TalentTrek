@@ -50,3 +50,69 @@
 .reject-button:hover{
     background-color: rgba(210, 26, 26, 0.541);
 }
+.FirstName{
+    margin-left: 5%;
+}
+.FirstName2{
+    margin-left: 3%;
+}
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .counselorRequests {
+        font-size: 20px;
+        margin-top: 30px;
+    }
+    .FirstName{
+        margin-left: 0%;
+    }
+    .FirstName2{
+        margin-left: 0%;
+    }
+    .counselor-booking-heading p{
+        display: none;
+    }
+    .counselor-booking-heading,
+    .counselor-booking-details {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .counselor-booking-heading {
+        font-size: 18px;
+    }
+
+    .counselor-booking-details {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .accept-button,
+    .reject-button {
+        width: 150%;
+    }
+    .arButtons{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .counselorRequests {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+
+    .counselor-booking-heading,
+    .counselor-booking-details {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .accept-button,
+    .reject-button {
+        font-size: 14px;
+        padding: 5px;
+    }
+}

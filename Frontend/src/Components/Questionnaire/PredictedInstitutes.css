@@ -109,4 +109,30 @@
     z-index: -1;
   }
   
-  
+  /* Styles for widths between 400px and 600px */
+@media screen and (max-width: 600px) {
+  .InstImgContainer {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .InstTextOverlay1 {
+      margin-top: 0%;
+      margin-left: 0;
+  }
+  .inst_tblcontainer2{
+    background-color: #dcb88f60;
+    left: 50%;
+    top: 213%;
+  }
+  .InstIMG{
+    width: 100%;
+  }
+}
+
+/* Styles for widths below 400px */
+@media screen and (max-width: 450px) {
+  .InstTextOverlay1 {
+      margin-top: 5%;
+  }
+}

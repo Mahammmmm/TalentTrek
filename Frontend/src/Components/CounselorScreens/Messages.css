@@ -33,11 +33,7 @@
     justify-content: center;
     height: 10%;
 }
-.ChatsDivBottom{
-    color: white;
-    padding: 20px;
-    
-}
+
 .ChatDiv{
     flex: 3;
     border-radius: 10px;
@@ -95,3 +91,46 @@
     color: white;
     margin-right: 8px;
   }
+.back-icon{
+  width: 50px;
+}
+
+
+
+
+
+ 
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .ChatsMainDiv {
+      width: 90vw; 
+  }
+  
+  .user-image-chat,
+  .user-image-chats {
+      margin-right: 5px;
+  }
+}
+
+
+
+
+@media (max-width: 530px) {
+  /* Adjust existing styles for screen widths up to 530px */
+  .ChatsDiv {
+    display: flex; /* Default to flex */
+  }
+
+  .ChatDiv {
+    display: none; /* Initially hide ChatDiv */
+  }
+
+  .show-chat .ChatsDiv {
+    display: none; /* Hide ChatsDiv when ChatDiv is active */
+  }
+
+  .show-chat .ChatDiv {
+    display: flex; /* Show ChatDiv when active */
+  }
+
+}

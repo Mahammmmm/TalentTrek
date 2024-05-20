@@ -4,6 +4,8 @@ import { user } from '../../assets/index-assets'
 import { Link } from 'react-router-dom';
 import { db } from '../../lib/firebase';
 import { setDoc,doc, getDoc, getDocs, query, collection, where,updateDoc,addDoc } from "firebase/firestore";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -170,17 +172,19 @@ export default function Header() {
 try {
   // Check if the chat document exists for sender
   const chatDoc1 = await getDoc(chatDoc1Ref);
+  if(!chatDoc1.exists()) {
+    await setDoc(chatDoc1Ref,{
+      sender: userId,
+      receiver: counselorId,
+    });
+  }
   if (chatDoc1.exists()) {
     await updateDoc(chatDoc1Ref,{
       sender: userId,
       receiver: counselorId,
     });
-  } else {
-    chatDoc1Ref.set({
-      sender: userId,
-      receiver: counselorId,
-    });
-  }
+  } 
+  
 
   // Check if the chat document exists for receiver
   const chatDoc2 = await getDoc(chatDoc2Ref);
@@ -189,8 +193,9 @@ try {
       sender: counselorId,
       receiver: userId,
     });
-  } else {
-    chatDoc2Ref.set({
+  } 
+  if(!chatDoc2.exists()) {
+    await setDoc(chatDoc2Ref,{
       sender: counselorId,
       receiver: userId,
     });
@@ -215,15 +220,20 @@ setMessageText('');
   };
 
 
-
+  const [showChat, setShowChat] = useState(false);
   const [selectedCounselorIndex, setSelectedCounselorIndex] = useState(-1);
   const [selectedCounselorName, setSelectedCounselorName] = useState("");
   const handleCounselorClick = (index, counselorId,counselorName) => {
     setSelectedCounselorIndex(index);
     setSelectedCounselorName(counselorName);
     getMessages(counselorId);
+    setShowChat(true);
   };
-
+  const handleBackButtonClick = () => {
+    setSelectedCounselorIndex(null);
+    setSelectedCounselorName('');
+    setShowChat(false);
+};
 
 
 
@@ -240,7 +250,7 @@ setMessageText('');
           {<div>
             <ul>
               <li>
-                <Link to="/Messages" className="noUnderline">Messages</Link>
+                <Link to="/UserMessages" className="noUnderline">Messages</Link>
               </li>
 
               <li>
@@ -280,7 +290,7 @@ setMessageText('');
 
       <section className='User_MainDivChat'>
 
-        <div className='User_ChatsMainDiv'>
+        <div className={`User_ChatsMainDiv ${showChat ? 'show-chat' : ''}`}>
 
 
           <div className='User_ChatsDiv'>
@@ -307,16 +317,17 @@ setMessageText('');
 
 
 
+          {selectedCounselorName && (
+          <div className='ChatDiv' style={{ display: selectedCounselorIndex !== null ? 'block' : 'none' }}>
 
-          <div className='ChatDiv'>
-
-            {selectedCounselorName && (
+            
               <div className='User_ChatDivTop'>
+                 <FontAwesomeIcon icon={faArrowLeft} onClick={handleBackButtonClick} className="back-icon"/>
                 <img src={user} alt={user} className="user-image-chats" />
                 <p className='UserNameChat'>{selectedCounselorName}</p>
                 
               </div>
-            )}
+           
 
             {messages && (
               <div className='ChatDivBottom'>
@@ -334,7 +345,7 @@ setMessageText('');
                 </div>
               </div>
             )}
-          </div>
+          </div> )}
         </div>
       </section>
 

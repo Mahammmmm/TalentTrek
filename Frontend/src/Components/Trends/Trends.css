@@ -1,97 +1,218 @@
-.trendsbg{
-    min-height: 100vh;
+.trendsbg {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden; /* Ensure content doesn't overflow */
 }
+
 .trendsbg::before {
-    content: "";
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    width: 70%;
-    height: 70%;
-    background-image: url('../../assets/TrendsPrediction2.jpg');
-    background-size: cover;
-    background-position: center;
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 70%;
+  height: 70%;
+  background-image: url('../../assets/TrendsPrediction2.jpg');
+  background-size: cover;
+  background-position: center;
 }
+
 .trendscontent {
-    position: absolute;
-    top: 60%;
-    left: 62%; 
-    transform: translateY(-50%);
-    
-    width: 35%;
-    z-index: 1; 
-    display: flex;
-    flex-direction: column;
-   text-align: center;
-  }
-  
-  .trendscontent p {
-    text-align: center;
-    color: rgb(8, 15, 149);
-  }
-  .trendscontent h1 {
-    text-align: center;
-    font-family: Hammersmith One;
-    color: rgb(37, 46, 215);
-  }
+  position: absolute;
+  top: 60%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  width: 35%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8); /* Slight background for better readability */
+  padding: 20px;
+  border-radius: 10px;
+}
 
+.trendscontent p {
+  color: rgb(8, 15, 149);
+}
 
+.trendscontent h1 {
+  font-family: 'Hammersmith One', sans-serif;
+  color: rgb(37, 46, 215);
+}
 
+.DisplayCareers {
+  padding: 30px;
+}
 
+.careers-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
 
-  .DisplayCareers {
-    padding: 30px;
-  }
-  
-  .careers-container {
-    display: flex;
-    /* flex-direction: row;
-    align-items: flex-start;*/
- } 
- .fixedText {
+.fixedText {
   width: 20%;
   position: fixed;
-  top: 60%; 
+  top: 60%;
   transform: translateY(-50%);
 }
+
+.fixedText h1 {
+  font-family: 'Holtwood One SC', serif;
+  color: rgb(29, 33, 105);
+  font-size: 35px;
+}
+
+.cards-container {
+  margin-left: 20%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: calc(30% - 20px);
+  margin: 10px;
+  padding: 20px;
+  background: #fff; /* White background for cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  border-radius: 10px; /* Rounded corners */
+  transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
+.card img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px;
+  border-radius: 5px; /* Rounded corners for images */
+}
+
+.card h5 {
+  margin-bottom: 5px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.card p {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.trendingcareereheading {
+  font-family: 'Holtwood One SC', serif;
+  font-size: 30px;
+  text-align: right;
+  margin-right: 5%;
+}
+
+/* Media Queries for responsiveness */
+
+@media screen and (max-width: 992px) {
+  .trendscontent {
+      width: 60%;
+      left: 50%;
+  }
+
+  .trendingcareereheading {
+      font-size: 1.5rem;
+  }
+
+  .trendsbg {
+      min-height: 80vh;
+  }
+
+  .trendsbg::before {
+      top: 20%;
+      left: 40%;
+      width: 60%;
+      height: 60%;
+  }
+
   .fixedText h1 {
-    font-family: Holtwood One SC;
-    color: rgb(29, 33, 105);
-    font-size: 35px;
- }
-  
+      font-size: 2rem;
+  }
+
   .cards-container {
-    margin-left: 300px;
-    display: flex;
-    flex-wrap: wrap;
-    
+      margin-left: 0;
   }
-  
+
   .card {
-    width: calc(30% - -10px); 
-    margin: 10px;
-    padding: 20px;
-   
+      width: calc(40% - 20px);
   }
-  
-  .card img {
-    width: 100%; /* Adjust as needed */
-    height: 100%; /* Adjust as needed */
-    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .trendscontent {
+      width: 70%;
+      left: 50%;
   }
-  
-  .card h5 {
-    margin-bottom: 5px;
-    font-weight: bolder;
-    text-align: center;
+
+  .trendingcareereheading {
+      font-size: 1.3rem;
+      text-align: center;
+      margin-bottom: 20px;
   }
-  
-  .card p {
-    margin-bottom: 0;
+
+  .trendsbg {
+      min-height: 80vh;
   }
-  .trendingcareereheading{
-    font-family: Holtwood One SC;
-    font-size: 30px;
-    text-align:right;
-    margin-right: 5%;
+
+  .trendsbg::before {
+      top: 10%;
+      left: 10%;
+      width: 80%;
+      height: 80%;
   }
+
+  .fixedText {
+      position: static;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+  }
+
+  .fixedText h1 {
+      font-size: 1.8rem;
+  }
+
+  .cards-container {
+      margin-left: 0;
+  }
+
+  .card {
+      width: calc(100% - 20px);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .trendscontent {
+      width: 80%;
+  }
+
+  .fixedText h1 {
+      font-size: 1.5rem;
+  }
+
+  .trendingcareereheading {
+    margin-top: -60px;
+    margin-bottom: 60px;
+      font-size: 1rem;
+      text-align: center;
+      
+  }
+
+  .card {
+      width: calc(100% - 20px);
+      margin-left: 0;
+  }
+
+  .trendsbg::before {
+      top: 20%;
+      left: 5%;
+      width: 90%;
+      height: 50%;
+  }
+}

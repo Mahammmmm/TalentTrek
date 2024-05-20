@@ -183,7 +183,7 @@ const Header = () => {
       <div className="career_container">
 
           <div className="career_upper-section">
-            <p>.</p>
+            <p></p>
           </div>
 
           <div className="career_middle-section">
@@ -223,7 +223,7 @@ const Header = () => {
           </div>
 
           <div className="career_lower-section">
-            <p>.</p>
+            <p></p>
           </div>
 
       </div>
@@ -233,11 +233,11 @@ const Header = () => {
 
 
 
-    <section id='unis' className='careersbg'>  
+    <section id='unis' className='UNIbg'>  
       <div className="uni_container">
 
           <div className="uni_upper-section">
-            <p>.</p>
+            <p></p>
           </div>
 
 

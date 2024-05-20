@@ -25,7 +25,11 @@ const Questionnaire = () => {
     e.preventDefault();
     window.location.href = "./ResumeForm_Impactful"
   };
+  const [menuOpen, setMenuOpen] = useState(false);
 
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   return (
     <div>
         <nav className='navbar3'>

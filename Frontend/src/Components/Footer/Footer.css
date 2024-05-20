@@ -42,3 +42,18 @@
     margin: 0 5px;
   }
   
+
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+  .info {
+    margin-left: 5%; /* Adjusted for smaller screens */
+    margin-right: 5%; /* Adjusted for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .AppHeading {
+    font-size: 1.5rem; /* Further adjusted for smaller screens */
+  }
+}

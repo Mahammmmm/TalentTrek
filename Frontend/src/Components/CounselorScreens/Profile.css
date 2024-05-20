@@ -7,7 +7,7 @@
 
 .big-box {
     width: 600px; 
-    height: 450px; 
+    height: 500px; 
     background-color: white; 
     border-radius: 10px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.334); /* Add shadow effect */
@@ -42,4 +42,34 @@
 
 .value {
     flex: 1;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .big-box {
+        width: 90%; /* Adjust width for smaller screens */
+        height: auto; /* Let the height adjust based on content */
+        padding: 20px; /* Add some padding for smaller screens */
+    }
+    .name {
+        font-size: large; /* Adjust font size for smaller screens */
+    }
+    .label {
+        width: 120px; /* Adjust label width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .big-box {
+        width: 100%; /* Adjust width for very small screens */
+        height: auto; /* Let the height adjust based on content */
+        padding: 15px; /* Add some padding for very small screens */
+    }
+    .name {
+        font-size: medium; /* Adjust font size for very small screens */
+    }
+    .label {
+        width: 100px; /* Adjust label width for very small screens */
+        margin-left: 10px; /* Adjust margin for very small screens */
+    }
 }

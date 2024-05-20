@@ -59,57 +59,42 @@ const Counselling = () => {
 
 
     
+    const [menuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+      setMenuOpen(!menuOpen);
+    };
     
 
 
     return(
         <div>
             <header>
-        <nav className='nav_first'>
-            <div>
-                <a href='/' className='logo2'>
-                    Talent<span className='brown2'>Trek</span>
-                </a>
-            </div>
-            { <div>
-          <ul>
-          <li>
-            <Link to="/Messages" className="noUnderline">Messages</Link>
-          </li>
-
-          <li>
-            <Link to="/q1" className="noUnderline">Career Test</Link>
-          </li>
-
-          <li>
-            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
-          </li>
-
-          <li>
-            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
-          </li>
-          <li>
-            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
-          </li>
-
-          </ul>
-          </div> }
-            <div>
-              <div class="image-and-text-container2">
-                <p className='welcome_uni'>{userData.name}{' '} </p>
-                {userData.image ? (
-                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
-                ) : (
-                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
-                )}
-              </div>
-              
-            </div> 
-            
-        </nav>
-
-        </header>
+      <nav className='nav_first'>
+      <div className='nav_toggle' onClick={toggleMenu}>&#9776;</div>
+        <div>
+          <Link to="/" className='logo2'>Talent<span className='brown2'>Trek</span></Link>
+        </div>
+        
+        <ul className={menuOpen ? 'active' : ''}>
+          <li><Link to="/userMessages" className="noUnderline">Messages</Link></li>
+          <li><Link to="/q1" className="noUnderline">Career Test</Link></li>
+          <li><Link to="/CounsellersPage" className="noUnderline">Counsellors</Link></li>
+          <li><Link to="/viewinstitutes" className="noUnderline">Universities</Link></li>
+          <li><Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link></li>
+        </ul>
+        <div className='image-and-text-container2'>
+          
+          <p className='welcome_uni'>{userData.name} </p>
+          <div className='UserImage_uni_container'>
+            <Link to="/userprofile">
+              <img src={userData.image ? userData.image : user} alt="UserImage" className='UserImage_uni' />
+            </Link>
+          </div>
+        </div>
+        
+      </nav>
+    </header>
 
 
 

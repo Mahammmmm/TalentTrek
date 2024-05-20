@@ -53,3 +53,69 @@
     background-color: rgba(204, 128, 29, 0.927);
     margin-left: 33%;
 }
+
+
+
+
+@media screen and (max-width: 992px) {
+    .counselor-card2, .booking-section {
+        width: 70%; /* Adjusted width for smaller screens */
+    }
+
+    .sessionButton {
+        margin-left: auto; /* Centers the button */
+        margin-right: auto;
+        display: block;
+        width: 50%; /* Adjust button width */
+    }
+    .counselor-card2{
+        margin-right: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .counselor-card2, .booking-section {
+        width: 90%; /* Adjusted width for small screens */
+        margin: 5% auto; 
+    }
+    .counselor-card2{
+        margin-right: 5px;
+    }
+    .counselor-image2 {
+        width: 80%; /* Adjusted image width for smaller screens */
+    }
+
+    .booking-section h1 {
+        font-size: 24px; /* Adjust font size for smaller screens */
+    }
+
+    .sessionButton {
+        width: 70%; /* Adjust button width */
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .counselor-info-container {
+        flex-direction: column; /* Stack elements in a column */
+        align-items: center; /* Center align the elements */
+    }
+
+    .counselor-card2, .booking-section {
+        width: 90%; /* Full width for extra small screens */
+        margin: 10px 0; /* Top and bottom margin */
+    }
+
+    .counselor-image2 {
+        width: 100%; /* Full width image */
+    }
+
+    .booking-section h1 {
+        font-size: 20px; /* Smaller font size */
+    }
+
+    .sessionButton {
+        width: 90%; /* Adjust button width */
+        margin: 10px auto; /* Center the button */
+    }
+}

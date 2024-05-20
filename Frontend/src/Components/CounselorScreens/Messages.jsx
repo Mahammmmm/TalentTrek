@@ -4,7 +4,8 @@ import { user } from '../../assets/index-assets';
 import { db } from '../../lib/firebase';
 import {   doc, getDoc, getDocs, query, collection, where,updateDoc,addDoc } from "firebase/firestore";
 import "./Messages.css"
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 export default function Messages(){
@@ -149,17 +150,18 @@ export default function Messages(){
     //console.log("Clicked counselor id:",clickedCounselor)
 
 
-      
+    const [showChat, setShowChat] = useState(false);
     const [selectedUserIndex, setSelectedUserIndex] = useState(-1);
     const [selectedUserName, setSelectedUserName] = useState("");
     const handleCounselorClick = (index, userId,username) => {
       setSelectedUserIndex(index);
       setSelectedUserName(username);
       getMessages(userId);
+      setShowChat(true);
     };
 
 
-
+    
 
     
 
@@ -240,25 +242,40 @@ export default function Messages(){
         onSend(UserId, messageText);
     };
   
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);
+    }
 
 
+
+
+    const handleBackButtonClick = () => {
+        setSelectedUserIndex(null);
+        setSelectedUserName('');
+        setShowChat(false);
+    };
 
     return(
         <div className='CounselorChatDiv'>
         <nav className="CounselorNav_nav">
+            <div className="CounselorNav_hamburger" onClick={toggleMenu}>
+              {isMenuOpen ? '✖' : '☰'}
+            </div>
                 <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
-                <ul>
+                <ul className={`CounselorNav_nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <li >
-                        <Link to='/Messages'><a style={{fontWeight:'bold'}}> Messages</a></Link>
+                        <a style={{fontWeight:'bold'}} href='/Messages'> Messages</a>
                     </li>
                     <li>
-                    <Link to='/CouselorRequests'><a> Requests</a></Link>
+                    <a href='/CouselorRequests'> Requests</a>
                     </li>
                     <li>
-                    <Link to='/Schedule'><a> Schedule</a></Link>
+                    <a href='/Schedule'> Schedule</a>
                     </li>
                     <li>
-                    <Link to='/Profile'><a> Profile</a></Link>
+                    <a href='/Profile'> Profile</a>
                     </li>
                 </ul>
             </nav>
@@ -267,10 +284,10 @@ export default function Messages(){
 
             <section className='MainDivChat'>
 
-                <div className='ChatsMainDiv'>
+                <div className={`ChatsMainDiv ${showChat ? 'show-chat' : ''}`}>
 
 
-                    <div className='ChatsDiv'>
+                    <div className='ChatsDiv' >
                         <div className='ChatsDivTop'>
                             <h3>Inbox</h3>
                         </div>
@@ -295,30 +312,31 @@ export default function Messages(){
 
 
 
-                    <div className='ChatDiv'>
-                        {selectedUserName && (
-                            <div className='ChatDivTop'>
-                                <img src={user} alt={user} className="user-image-chats" />
-                                <p className='UserNameChat'>{selectedUserName}</p>
-                            </div>
-                    )}
-
+                    {selectedUserName && (
+                <div className='ChatDiv' style={{ display: selectedUserIndex !== null ? 'block' : 'none' }}>
+                    <div className='ChatDivTop'>
+                        <FontAwesomeIcon icon={faArrowLeft} onClick={handleBackButtonClick} className="back-icon"/>
+                        <img src={user} alt={user} className="user-image-chats" />
+                        <p className='UserNameChat'>{selectedUserName}</p>
+                        
+                    </div>
                     {messages.length > 0 && (
                         <div className='ChatDivBottom'>
                             <div className="message-container-userchat">
-                            {messages.slice(0).reverse().map((message, index) => (
-                                <div key={index} className={`message ${message.sendBy === userId ? 'sentt' : 'received'}`}>
-                                <p>{message.text}</p>
-                                </div>
-                            ))}
+                                {messages.slice(0).reverse().map((message, index) => (
+                                    <div key={index} className={`message ${message.sendBy === userId ? 'sentt' : 'received'}`}>
+                                        <p>{message.text}</p>
+                                    </div>
+                                ))}
                             </div>
                             <div className="input-container-userchat">
-                            <input type="text" placeholder="Type your message..." value={messageText} onChange={(e) => setMessageText(e.target.value)}/>
-                            <button onClick={() => handleSendClick(clickedCounselor)}>Send</button>
+                                <input type="text" placeholder="Type your message..." value={messageText} onChange={(e) => setMessageText(e.target.value)}/>
+                                <button  onClick={() => handleSendClick(clickedCounselor)}>Send</button>
                             </div>
                         </div>
                     )}
-                    </div>
+                </div>
+            )}
                 </div>
             </section>
         </div>

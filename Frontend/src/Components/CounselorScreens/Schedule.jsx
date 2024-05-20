@@ -63,11 +63,11 @@ export default function Schedule(){
     
     
 
-    const IdPage = (e)=>{
+    const IdPage = (e) => {
         e.preventDefault();
-        window.location.href = "./EnterId"
-      
+        window.location.href = "./EnterId";
     }
+    
 
     const isToday = (someDate) => {
         const today = new Date();
@@ -131,50 +131,48 @@ export default function Schedule(){
             });
         }
     }, [userBookings]);
-    
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+        const toggleMenu = () => {
+          setIsMenuOpen(!isMenuOpen);}
     return(
 
         <div>
         <nav className="CounselorNav_nav">
-                <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
-                <ul>
-                    <li >
-                        <Link to='/Messages'><a> Messages</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/CouselorRequests'><a> Requests</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Schedule'><a style={{fontWeight:'bold'}}> Schedule</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Profile'><a> Profile</a></Link>
-                    </li>
-                </ul>
+              <div className="CounselorNav_hamburger" onClick={toggleMenu}>
+                {isMenuOpen ? '✖' : '☰'}
+              </div>
+              <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
+              <ul className={`CounselorNav_nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                <li><a href='/Messages'>Messages</a></li>
+                <li><a href='/CouselorRequests'>Requests</a></li>
+                <li><a href='/Schedule'>Schedule</a></li>
+                <li><a href='/Profile'>Profile</a></li>
+              </ul>
             </nav>
             {/* <button on onClick={IdPage}>Start</button> */}
             <h3 className='counselorRequests'>My Schedule</h3>
             <div className="counselor-booking-list">
                         <div className="counselor-booking-heading">
-                            <p style={{marginLeft:'5%'}}>Name</p>
-                            <p>Contact</p>
+                            <p className='FirstName'>Name</p>
+                            <p>Email</p>
                             <p>Date</p>
                             <p>Time</p>
                             <p style={{marginRight:'5%'}}>Request</p>
                         </div>
                         {userBookings.map((booking, index) => (
                             <div className="counselor-booking-details" key={index}>
-                                <p style={{marginLeft:'3%'}}>{booking.user.name}</p>
-                                <p >{booking.user.contact}</p>
+                                <p className='FirstName2'>{booking.user.name}</p>
+                                <p >{booking.user.email}</p>
                                 <p >{new Date(booking.appointmentDate[0].date).toLocaleDateString()}</p>
                                 <p >{booking.appointmentDate[0].timeSlot}</p>
                                 <div style={{marginRight:'4%'}}>
                                     {/* {isToday(new Date(booking.appointmentDate[0].date)) && (
                                         <button className="call-button" onClick={IdPage}>Start Call</button>
                                     )} */}
-                                    {/* {isCurrentTimeSlot(booking.appointmentDate[0].timeSlot).isCurrent && ( */}
+                                    {isCurrentTimeSlot(booking.appointmentDate[0].timeSlot).isCurrent && ( 
                                         <button className="call-button" onClick={IdPage}>Start Call</button>
-                                    {/* )} */}
+                                    )} 
                                 </div>
                             </div>
                         ))}

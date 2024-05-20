@@ -80,42 +80,40 @@ const Requests = ()=>{
         });
     };
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+      setIsMenuOpen(!isMenuOpen);}
     return(
         <div>
             <nav className="CounselorNav_nav">
-                <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
-                <ul>
-                    <li >
-                        <Link to='/Messages'><a> Messages</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/CouselorRequests'><a style={{fontWeight:'bold'}}> Requests</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Schedule'><a> Schedule</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Profile'><a> Profile</a></Link>
-                    </li>
-                </ul>
+              <div className="CounselorNav_hamburger" onClick={toggleMenu}>
+                {isMenuOpen ? '✖' : '☰'}
+              </div>
+              <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
+              <ul className={`CounselorNav_nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                <li><a href='/Messages'>Messages</a></li>
+                <li><a href='/CouselorRequests'>Requests</a></li>
+                <li><a href='/Schedule'>Schedule</a></li>
+                <li><a href='/Profile'>Profile</a></li>
+              </ul>
             </nav>
             <h3 className='counselorRequests'>Session Requests</h3>
             <div className="counselor-booking-list">
                         <div className="counselor-booking-heading">
-                            <p style={{marginLeft:'5%'}}>Name</p>
-                            <p>Contact</p>
+                            <p className='FirstName'>Name</p>
+                            <p>Email</p>
                             <p>Date</p>
                             <p>Time</p>
                             <p style={{marginRight:'5%'}}>Request</p>
                         </div>
                         {userBookings.map((booking, index) => (
                             <div className="counselor-booking-details" key={index}>
-                                <p style={{marginLeft:'3%'}}>{booking.user.name}</p>
-                                <p style={{marginLeft:'5%'}}>{booking.user.contact}</p>
-                                <p style={{marginLeft:'5%'}}>{new Date(booking.appointmentDate[0].date).toLocaleDateString()}</p>
-                                <p style={{marginLeft:'5%'}}>{booking.appointmentDate[0].timeSlot}</p>
-                                <div style={{marginRight:'2%'}}>
+                                <p className='FirstName2'>{booking.user.name}</p>
+                                <p className='FirstName'>{booking.user.email}</p>
+                                <p className='FirstName'>{new Date(booking.appointmentDate[0].date).toLocaleDateString()}</p>
+                                <p className='FirstName'>{booking.appointmentDate[0].timeSlot}</p>
+                                <div style={{marginRight:'2%'}} className='arButtons'>
                                     <button className="accept-button" onClick={() => handleStatusUpdate(booking._id, "approved")}>Accept</button>
                                     <button className="reject-button" onClick={() => handleStatusUpdate(booking._id, "cancelled")}>Reject</button>
                                 </div>

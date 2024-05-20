@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import "./EnterIdPage.css"
 
 
 
 const EnterID = ()=>{
     const [input,setInput] = useState("");
-    
+    // const location = useLocation();
+    // const searchParams = new URLSearchParams(location.search);
+    // const userId = searchParams.get('userId');
+
+    //console.log(userId);
     return(
         <div>
             <nav className="CounselorNav_nav">

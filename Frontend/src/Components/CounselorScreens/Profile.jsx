@@ -37,28 +37,24 @@ export default function Profile() {
         window.localStorage.clear();
         window.location.href = "./CounselorLogin";
       }
+      const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+      const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);}
     return (
         <div>
             <nav className="CounselorNav_nav">
-                <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
-                <ul>
-                    <li >
-                        <Link to='/Messages'><a> Messages</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/CouselorRequests'><a> Requests</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Schedule'><a> Schedule</a></Link>
-                    </li>
-                    <li>
-                    <Link to='/Profile'><a style={{fontWeight:'bold'}}> Profile</a></Link>
-                    </li>
-                    <li>
-                    <Link><a onClick={logOut}> Logout</a></Link>
-                    </li>
-                </ul>
+              <div className="CounselorNav_hamburger" onClick={toggleMenu}>
+                {isMenuOpen ? '✖' : '☰'}
+              </div>
+              <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
+              <ul className={`CounselorNav_nav-menu ${isMenuOpen ? 'active' : ''}`}>
+                <li><a href='/Messages'>Messages</a></li>
+                <li><a href='/CouselorRequests'>Requests</a></li>
+                <li><a href='/Schedule'>Schedule</a></li>
+                <li><a href='/Profile'>Profile</a></li>
+                <li><a onClick={logOut}>Logout</a></li>
+              </ul>
             </nav>
             <div class="container">
                 <div class="big-box">

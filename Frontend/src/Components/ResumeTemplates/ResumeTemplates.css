@@ -144,6 +144,7 @@ a.logo3 .brown2{
   display: flex;
   justify-content: space-around;
   margin-top: 50px;
+  flex-wrap: wrap;
 }
 
 .template {
@@ -282,4 +283,85 @@ h3 {
     opacity: 1;
   }
 
+
+
+
+
+
+  
+@media screen and (max-width: 992px) {
+  .navbar2 {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .image-and-text-container2 {
+    flex-direction: column;
+  }
+  .rescont {
+    flex-direction: column;
+    text-align: center;
+  }
+  .res_bg3, .resdet {
+    margin: 10% auto;
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .template {
+    width: 100%;
+    max-width: none;
+  }
+  .form_FourthContainer {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .TemplateImg, .TemplateImg2 {
+    width: 100%;
+    max-width: none;
+  }
+  .overlay-button, .overlay-button2 {
+    padding: 5px 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .navbar2 {
+    padding: 5px;
+  }
+  .welcome_uni {
+    margin-top: 10px;
+  }
+  .res_quote1 {
+    font-size: 35px;
+  }
+  .res_p {
+    font-size: 18px;
+  }
+  .template {
+    height: auto;
+  }
+  .section-heading {
+    font-size: 30px;
+  }
+  .template-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .template {
+    width: 90%;
+  }
+  .form_FourthContainer {
+    height: auto;
+    padding: 10px;
+  }
+  .TemplateImg, .TemplateImg2 {
+    width: 100%;
+    height: auto;
+  }
+  .overlay-button, .overlay-button2 {
+    padding: 5px 10px;
+  }
+}
  

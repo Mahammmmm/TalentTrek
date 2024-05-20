@@ -69,61 +69,46 @@ const Questionnaire = () => {
    // Filter recommended careers based on the selected study area
    const filteredCareers = recommendedCareers.filter(career => career.Study_Area === studyArea);
 
+   const [menuOpen, setMenuOpen] = useState(false);
 
+   const toggleMenu = () => {
+     setMenuOpen(!menuOpen);
+   };
 
   return (
 
     <div>
-        <header>
-        <nav className='nav_first'>
-            <div>
-                <a href='/' className='logo2'>
-                    Talent<span className='brown2'>Trek</span>
-                </a>
-            </div>
-            { <div>
-          <ul>
-          <li>
-            <Link to="/Messages" className="noUnderline">Messages</Link>
-          </li>
-
-          <li>
-            <Link to="/q1" className="noUnderline">Career Test</Link>
-          </li>
-
-          <li>
-            <Link to="/CounsellersPage" className="noUnderline">Counsellors</Link>
-          </li>
-
-          <li>
-            <Link to="/viewinstitutes" className="noUnderline">Universities</Link>
-          </li>
-          <li>
-            <Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link>
-          </li>
-
-          </ul>
-          </div> }
-            <div>
-              <div class="image-and-text-container2">
-                <p className='welcome_uni'>{userData.name}{' '} </p>
-                {userData.image ? (
-                  <Link to="/userprofile"><img src={userData.image} alt='UserImage' className='UserImage_uni'></img></Link>
-                ) : (
-                  <Link to="/userprofile"><img src={user} alt='UserIcon' className='UserImage_uni'></img></Link>
-                )}
-              </div>
-              
-            </div> 
-            
-        </nav>
-
-        </header>
+       <header>
+      <nav className='nav_first'>
+      <div className='nav_toggle' onClick={toggleMenu}>&#9776;</div>
+        <div>
+          <Link to="/" className='logo2'>Talent<span className='brown2'>Trek</span></Link>
+        </div>
+        
+        <ul className={menuOpen ? 'active' : ''}>
+          <li><Link to="/userMessages" className="noUnderline">Messages</Link></li>
+          <li><Link to="/q1" className="noUnderline">Career Test</Link></li>
+          <li><Link to="/CounsellersPage" className="noUnderline">Counsellors</Link></li>
+          <li><Link to="/viewinstitutes" className="noUnderline">Universities</Link></li>
+          <li><Link to="/resumetemplates2" className="noUnderline">Resume Builder</Link></li>
+        </ul>
+        <div className='image-and-text-container2'>
+          
+          <p className='welcome_uni'>{userData.name} </p>
+          <div className='UserImage_uni_container'>
+            <Link to="/userprofile">
+              <img src={userData.image ? userData.image : user} alt="UserImage" className='UserImage_uni' />
+            </Link>
+          </div>
+        </div>
+        
+      </nav>
+    </header>
 
 
       <section className='QsrRst_Sec1'>
         <div className='QsrRstImgContainer'>
-        <img src={career_prediction_background} alt="Image 2" className='QsrRstIMG'/>
+          <img src={career_prediction_background} alt="Image 2" className='QsrRstIMG'/>
             
             <div className='QsrRstTextOverlay1'>
                 <p className="two-color-text1">Which Career</p>
@@ -138,10 +123,10 @@ const Questionnaire = () => {
 
       <section className='cr_ThirdContainer'>
         <div className='cr_circle circle1'>
-            <p className="cr_circle-text"><span style={{fontSize:'55px',fontWeight:'bolder',textAlign: 'left'}}>YOU</span><br/>Your <br /> Personality <br /> Type</p>
+            <p className="cr_circle-text"><span style={{fontSize:'53px',fontWeight:'bolder',textAlign: 'left'}}>YOU</span><br/>Your <br /> Personality <br /> Type</p>
         </div>
         <div className='cr_circle circle2'>
-            <p className="cr_circle-text2"><span style={{fontSize:'35px',fontWeight:'bolder',textAlign: 'left'}}>A CAREER</span><br/>Compatible <br /> work <br /> environment</p>
+            <p className="cr_circle-text2"><span style={{fontSize:'33px',fontWeight:'bolder',textAlign: 'left'}}>A CAREER</span><br/>Compatible <br /> work <br /> environment</p>
         </div>
         <div className='cr_intersection'>
             <p className="cr_vertical-text">MATCH</p>

@@ -51,40 +51,11 @@ const updateData = () => {
         }));
 }
 
-  
-  
+const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-//   const fetchUpdatedData = () => {
-//     fetch("http://localhost:3002/CounselorsData", {
-//         method: "POST",
-//         crossDomain: true,
-//         headers: {
-//             "Content-Type": "application/json",
-//             Accept: "application/json",
-//             "Access-Control-Allow-Origin": "*",
-//         },
-//         body: JSON.stringify({
-//             token: window.localStorage.getItem("Counselortoken"),
-//         }),
-//     })
-//     .then((res) => {
-//         if (!res.ok) {
-//             throw new Error('Network response was not ok');
-//         }
-//         return res.json();
-//     })
-//     .then((data) => {
-//         console.log(data, "userData");
-//         setName(data.data.name);
-//         setEmail(data.data.email);
-//         setPassword(data.data.password);
-//         setGender(data.data.gender);
-//         setphoneNumber(data.data.phoneNumber);
-//     })
-//     .catch((error) => {
-//         console.error("Error fetching updated data:", error);
-//     });
-// }
+const toggleMenu = () => {
+  setIsMenuOpen(!isMenuOpen);
+}
 
 const logOut = () => {
     window.localStorage.clear();
@@ -94,23 +65,24 @@ const logOut = () => {
     return (
         <div>
             <nav className="CounselorNav_nav">
+            <div className="CounselorNav_hamburger" onClick={toggleMenu}>
+              {isMenuOpen ? '✖' : '☰'}
+            </div>
                 <a href="/CounselorHome" className="CounselorNav_site-title">Talent<span className="CounselorNav_trek">Trek</span></a>
-                <ul>
+                <ul className={`CounselorNav_nav-menu ${isMenuOpen ? 'active' : ''}`}>
                     <li >
-                        <Link to='/Messages'><a> Messages</a></Link>
+                        <a href='/Messages'> Messages</a>
                     </li>
                     <li>
-                    <Link to='/CouselorRequests'><a> Requests</a></Link>
+                    <a href='/CouselorRequests'> Requests</a>
                     </li>
                     <li>
-                    <Link to='/Schedule'><a> Schedule</a></Link>
+                    <a href='/Schedule'> Schedule</a>
                     </li>
                     <li>
-                    <Link to='/Profile'><a> Profile</a></Link>
+                    <a href='/Profile'> Profile</a>
                     </li>
-                    <li>
-                    <Link><a onClick={logOut}> Logout</a></Link>
-                    </li>
+                    <li><a onClick={logOut}>Logout</a></li>
                 </ul>
             </nav>
                 <div class="CounslerProfile_container">

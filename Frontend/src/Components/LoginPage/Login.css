@@ -126,3 +126,22 @@ label i {
   }
 
     
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login_container {
+    width: 80%; /* Adjusted width for smaller screens */
+  }
+
+  .loginButton {
+    margin-left: 0; /* Centered button */
+  }
+}
+
+@media (max-width: 600px) {
+  .login_container {
+    width: 90%; /* Further adjusted width for smaller screens */
+  }
+  .login_left-section {
+    display: none; /* Hide the left section on smaller screens */
+  }
+}

@@ -1,17 +1,15 @@
-.FirstScreenBg {
+/* .FirstScreenBg {
     display: flex;
     min-height: 100vh;
   }
   
   .firstDiv {
     flex: 1; 
-    /* background-color: rgb(208, 231, 250); */
   }
   
   .secondDiv {
     flex: 1; 
     background-color: beige;
-    /* background-color: rgb(164, 183, 206); */
   }
   .Counselor_Bg{
     width: 50%;
@@ -23,12 +21,10 @@
     margin-left: 71%;
     font-family: Holtwood One SC;
     color: rgb(149, 149, 116);
-    /* color: rgb(164, 183, 206); */
   }
   .FirstScreenH2{
     margin-left: 2%;
     font-family: Holtwood One SC;
-    /* color: rgb(208, 231, 250); */
   }
   .FirstScreenH3{
     text-align: center;
@@ -61,4 +57,126 @@
     background-color: rgb(67, 70, 73);
  }
   
-  
+   */
+   
+.FirstScreenBg {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.firstDiv{
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+}
+ .secondDiv {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: beige;
+}
+.Counselor_Bg{
+  width: 50%;
+  height: auto;
+  margin-top: 10%;
+}
+.Student_Bg {
+  width: 50%;
+  height: auto;
+  margin: 20px auto;
+}
+
+.FirstScreenH1{
+  text-align: center;
+  font-family: Holtwood One SC;
+  color: rgb(149, 149, 116);
+}
+.FirstScreenH2{
+  margin-left: 2%;
+  font-family: Holtwood One SC;
+}
+
+.FirstScreenH3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+.FirstScreenButton{
+  margin-top: 50%;
+  background-color: black;
+  border-radius: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+.FirstScreenButton2{
+  margin-top: 55%;
+  background-color: black;
+  border-radius: 20px;
+  margin-left: -35%;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 20px 0;
+}
+.FirstScreenButton:hover{
+  background-color: rgb(67, 70, 73);
+}
+.FirstScreenButton2:hover{
+  background-color: rgb(67, 70, 73);
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  .FirstScreenBg {
+      flex-direction: row;
+      padding: 0;
+  }
+
+  .firstDiv, .secondDiv {
+      margin: 0;
+  }
+
+  .FirstScreenH1 {
+    text-align: center;
+  }
+
+  .FirstScreenH2 {
+    text-align: center;
+  }
+
+  .FirstScreenButton {
+      margin-top: 25%;
+      margin-left: 25%;
+  }
+
+  .FirstScreenButton2 {
+      margin-top: 20%;
+      margin-left: 30%;
+  }
+}
+
+/* Styles for extra small screens */
+@media (max-width: 480px) {
+  .FirstScreenH1, .FirstScreenH2 {
+      font-size: 24px;
+  }
+
+  .FirstScreenH3 {
+      font-size: 16px;
+  }
+
+  .Counselor_Bg, .Student_Bg {
+      width: 80%;
+  }
+
+  .FirstScreenButton, .FirstScreenButton2 {
+      width: 80%;
+      margin: 10px auto;
+  }
+}

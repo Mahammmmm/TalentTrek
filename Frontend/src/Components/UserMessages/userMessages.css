@@ -99,3 +99,40 @@
     height: 30px; 
     margin-right: 10px; 
 }
+
+
+
+
+ 
+@media only screen and (max-width: 768px) {
+  .User_ChatsMainDiv {
+      width: 90vw; 
+  }
+  
+  .user-image-chat-user,
+  .user-image-chats {
+      margin-right: 5px;
+  }
+}
+
+
+
+
+@media (max-width: 530px) {
+  .User_ChatsDiv {
+    display: flex; 
+  }
+
+  .ChatDiv {
+    display: none; 
+  }
+
+  .show-chat .User_ChatsDiv {
+    display: none; 
+  }
+
+  .show-chat .ChatDiv {
+    display: flex; 
+  }
+
+}

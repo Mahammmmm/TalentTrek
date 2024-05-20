@@ -118,3 +118,24 @@
 .personality_button2:hover {
     background-color:  rgba(95, 158, 160, 0.543); /* Change color on hover if desired */
   }
+
+
+  @media screen and (max-width: 750px) {
+    .QsrRst_FourthContainer{
+      display: flex;
+      flex-direction: column;
+margin-bottom: 20px;
+
+    }
+    .QsrRst__head1, .QsrRst__head2{
+text-align: center;
+    }
+    .QsrRst_leftSection,
+    .QsrRst_rightSection {
+        width: 50%; /* Adjust width for larger screens */
+    }
+
+    .QsrRst_bottomSection {
+        margin-left: 29%; /* Restore left margin */
+    }
+}
