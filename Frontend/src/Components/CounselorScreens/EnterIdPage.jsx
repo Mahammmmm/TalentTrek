@@ -6,11 +6,8 @@ import "./EnterIdPage.css"
 
 const EnterID = ()=>{
     const [input,setInput] = useState("");
-    // const location = useLocation();
-    // const searchParams = new URLSearchParams(location.search);
-    // const userId = searchParams.get('userId');
 
-    //console.log(userId);
+
     return(
         <div>
             <nav className="CounselorNav_nav">

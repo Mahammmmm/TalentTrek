@@ -12,16 +12,6 @@ import {   doc, getDoc, getDocs, query, collection, where,updateDoc,addDoc } fro
 
 const EnterID = ()=>{
     const { id } = useParams();
-    // const location = useLocation();
-    // const searchParams = new URLSearchParams(location.search);
-    // const userId = searchParams.get('userId');
-    // const [url,setUrl]=useState("")
-
-    // useEffect(() => {
-    //     setUrl(window.location.href + id);
-    //     console.log(url)
-    // }, [id]);
-
 
     
 

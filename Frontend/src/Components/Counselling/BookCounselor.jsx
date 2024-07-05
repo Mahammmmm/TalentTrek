@@ -1,6 +1,6 @@
 import React ,{useState,useEffect} from 'react'
 import "./BookCounselor.css"
-import {user,FemaleCounselor,MaleCounselor,RatingStar,ArrowIcon} from '../../assets/index-assets'
+import {user,FemaleCounselor,MaleCounselor} from '../../assets/index-assets'
 import { Link,useParams  } from 'react-router-dom';
 import Footer from "../Footer/Footer";
 import Calendar from 'react-calendar';
@@ -18,10 +18,10 @@ const Counselling = () => {
     const [selectedTimeSlot, setSelectedTimeSlot] = useState("");
     const [selectedDay,setselectedDay]=useState("")
     const [bookingSuccess, setBookingSuccess] = useState(false);
-
+    const token = window.localStorage.getItem("token");
+    const [menuOpen, setMenuOpen] = useState(false);
     useEffect(() => {
-      const token = window.localStorage.getItem("token");
-  
+      
       if(token){
         fetch("http://localhost:3002/userData",{
           method:"POST",
@@ -142,7 +142,7 @@ const Counselling = () => {
         return null; // Render nothing until the counselor data is fetched
     }
 
-    const [menuOpen, setMenuOpen] = useState(false);
+    
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
